@@ -240,7 +240,7 @@ select {
 .header {
   background: #494d55;
   color: rgba(255, 255, 255, 0.85);
-  border-top: 5px solid #40babd;
+  border-top: 5px solid #58bbee;
   padding: 30px 0;
 }
 
@@ -268,7 +268,7 @@ select {
 }
 
 .branding .text-highlight {
-  color: #40babd;
+  color: #58bbee;
 }
 
 .body-green .branding .text-highlight {
@@ -543,7 +543,7 @@ select {
 }
 
 .body-blue .question {
-  color: #41b2ec;
+  color: #58bbee;
 }
 
 .body-orange .question {
@@ -1263,7 +1263,7 @@ select {
 
 .landing-page .branding .icon {
   font-size: 32px;
-  color: #40babd;
+  color: #58bbee;
 }
 
 .landing-page .tagline {
@@ -1380,15 +1380,15 @@ select {
 }
 
 .cards-section .item-primary .item-inner {
-  border-top: 3px solid #40babd;
+  border-top: 3px solid #58bbee;
 }
 
 .cards-section .item-primary .item-inner:hover .title {
-  color: #2d8284;
+  color: #179de2;
 }
 
 .cards-section .item-primary .icon {
-  color: #40babd;
+  color: #58bbee;
 }
 
 .cards-section .item-green .item-inner {
