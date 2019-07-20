@@ -967,7 +967,7 @@ select {
   display: block;
   color: #616670;
   padding: 0;
-  padding-left: 34px;
+  padding-left: 34px; 
   background: none;
 }
 
@@ -986,6 +986,40 @@ select {
 }
 
 .doc-sub-menu .nav-link.active {
+  background: none;
+  color: #40babd;
+}
+
+.doc-sub2-menu {
+  list-style: none;
+  padding-left: 0;
+}
+
+.doc-sub2-menu .nav-link {
+  margin-bottom: 10px;
+  font-size: 12px;
+  display: block;
+  color: #616670;
+  padding: 0;
+  padding-left: 68px; 
+  background: none;
+}
+
+.doc-sub2-menu .nav-link:first-child {
+  padding-top: 5px;
+}
+
+.doc-sub2-menu .nav-link:hover {
+  color: #494d55;
+  text-decoration: none;
+  background: none;
+}
+
+.doc-sub2-menu .nav-link:focus {
+  background: none;
+}
+
+.doc-sub2-menu .nav-link.active {
   background: none;
   color: #40babd;
 }
