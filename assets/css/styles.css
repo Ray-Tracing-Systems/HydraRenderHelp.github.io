@@ -526,7 +526,7 @@ select {
 }
 
 .section-block .list > li {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .section-block .list ul > li {
@@ -963,11 +963,11 @@ select {
 
 .doc-sub-menu .nav-link {
   margin-bottom: 10px;
-  font-size: 12px;
+  font-size: 13px;
   display: block;
   color: #616670;
   padding: 0;
-  padding-left: 34px; 
+  padding-left: 34px;
   background: none;
 }
 
