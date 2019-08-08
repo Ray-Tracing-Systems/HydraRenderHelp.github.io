@@ -445,7 +445,7 @@ select {
 }
 
 .body-blue .doc-header .doc-title {
-  color: #58bbee;
+  color: #4bacde;
 }
 
 .body-orange .doc-header .doc-title {
@@ -543,7 +543,7 @@ select {
 }
 
 .body-blue .question {
-  color: #58bbee;
+  color: #167aae;
 }
 
 .body-orange .question {
@@ -573,6 +573,8 @@ select {
 
 .answer {
   color: #616670;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 
 .code-block {
@@ -830,7 +832,7 @@ select {
 }
 
 .body-blue a {
-  color: #58bbee;
+  color: #098fd5;
 }
 
 .body-blue a:hover {
@@ -932,7 +934,7 @@ select {
 }
 
 .body-blue .doc-menu .nav-link.active {
-  color: #58bbee;
+  color: #4bacde;
   border-color: #58bbee;
 }
 
@@ -1029,7 +1031,7 @@ select {
 }
 
 .body-blue .doc-sub-menu .nav-link.active {
-  color: #58bbee;
+  color: #4bacde;
 }
 
 .body-orange .doc-sub-menu .nav-link.active {
@@ -1412,7 +1414,7 @@ select {
 }
 
 .cards-section .item-blue .icon {
-  color: #58bbee;
+  color: #3da8e0;
 }
 
 .cards-section .item-orange .item-inner {

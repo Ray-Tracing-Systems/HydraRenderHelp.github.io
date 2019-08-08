@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap 4 project documentation theme for developers</title>
+    <title>Hydra renderer doc. Components.</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,7 +56,7 @@
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title"><span aria-hidden="true" class="icon icon_puzzle_alt"></span> Компоненты</h1>
-                    <div class="meta"><i class="far fa-clock"></i> Последнее изменение: 20 июля 2019</div>
+                    <div class="meta"><i class="far fa-clock"></i> Последнее изменение: 8 августа 2019</div>
                 </div><!--//doc-header-->
                 <div class="doc-body row" >
                     <div class="doc-content col-md-9 col-12 order-1">
@@ -82,7 +82,10 @@
                                             <ul class="list">
         										<li>ОС Windows x64.</li>        										        										
         									</ul>
-        								<p>Начиная с версии 2.1с  наш рендер может использовать центральный процессор для расчётов, при наличии OpenCL совместимого процессора и драйвера для него. Поэтому других минимальных системных требований нет. Однако, <strong>Hydra Renderer был и остаётся GPU ориентированной рендер-системой,</strong> поэтому обратите внимание на рекомендуемые системные требования.</p>
+        								<p>Начиная с версии 2.1с  наш рендер может использовать центральный процессор для расчётов, при наличии 
+										OpenCL совместимого процессора и драйвера для него. Поэтому других минимальных системных требований нет.
+										Однако, <strong>Hydra Renderer был и остаётся GPU ориентированной рендер-системой,</strong> поэтому 
+										обратите внимание на рекомендуемые системные требования.</p>
                                             <h6>Рекомендуемые:</h6>
                                             <ul class="list">
         										<li>Для Nvidia это GTX 460 и выше.</li> 
@@ -96,9 +99,13 @@
                                         <h3 class="block-title">Установка плагина</h3>                                          
                                         <h6>Autodesk 3ds Max:</h6>
                                         <ol class="list">
-        							        <li>Скачайте плагин рендера с <a href="http://www.raytracing.ru/download.html" target="_blank">сайта</a> или из <a href="https://github.com/Ray-Tracing-Systems/HydraMaxBinary" target="_blank">гитхаба</a> и установите его.</li>        										        										
-        									<li>После запуска 3ds Max, нужно нажать Render Settings или F10. В окне Assign Renderer выбрать Hydra Renderer.</li>        										
-        									<li>Желательно после этого открыть настройки самого рендера и убедиться что он видит нужное устройство. После этого попробовать рендер в обычном окне на простой сцене.</li>        										
+        							        <li>Скачайте плагин рендера с <a href="http://www.raytracing.ru/download.html" target="_blank">сайта</a>
+											или из <a href="https://github.com/Ray-Tracing-Systems/HydraMaxBinary" target="_blank">гитхаба</a> и 
+											установите его.</li>        										        										
+        									<li>После запуска 3ds Max, нужно нажать Render Settings или F10. В окне Assign Renderer выбрать 
+											Hydra Renderer.</li>        										
+        									<li>Желательно после этого открыть настройки самого рендера и убедиться что он видит нужное устройство.
+											После этого попробовать рендер в обычном окне на простой сцене.</li>        										
         								</ol>        								
                                         <h6>Blender:</h6>
                                         <p>В разработке.</p>  
@@ -118,16 +125,12 @@
                                     <!-- ////////////////////////////////////////////////////////////-->
                                     <div id="InstallDrivers" class="section-block">
                                         <h3 class="block-title">Установка драйверов видеокарты</h3>                                        
-                                        <p>Установите последние драйвера для вашей видеокарты с сайта референсных видеокарт <a href="https://www.nvidia.ru/Download/index.aspx?lang=ru" target="_blank">NVIDIA</a> или <a href="https://www.amd.com/ru/support" target="_blank">AMD</a>.</p>                                                             
-                                        <p>Если видеокарта не видна в списке устройств в настройках рендера, попробуйте устанавливать драйвера <strong>с родного сайта производителя вашей видеокарты</strong>, начиная с последнего и уменьшая версию драйвера, до тех пор, пока видеокарта не появится в настройках рендера.</p>
-                                           
-        								<h6>Сайты некоторых производителей:</h6>   								
-        								    <ul class="list">        								        
-        										<li><a href="https://www.asus.com/ru/support/Download-Center/" target="_blank">ASUS</a></li>
-        										<li><a href="https://ru.msi.com/support/download/" target="_blank">MSI</a></li>
-        										<li><a href="https://www.gigabyte.com/Support/Graphics-Card" target="_blank">GIGABITE</a></li>
-        										<li><a href="http://www.palit.com/palit/download.php?pc_cate=vga&lang=en" target="_blank">PALIT</a></li>        										
-        									</ul>  
+                                        <p>Установите последние драйвера для вашей видеокарты с сайта референсных видеокарт 
+										<a href="https://www.nvidia.ru/Download/index.aspx?lang=ru" target="_blank">NVIDIA</a> или 
+										<a href="https://www.amd.com/ru/support" target="_blank">AMD</a>.</p>                                                             
+                                        <p>Если видеокарта не видна в списке устройств в настройках рендера, попробуйте устанавливать 
+										драйвера начиная с последнего и уменьшая версию драйвера до тех пор, пока видеокарта не появится
+										в настройках рендера.</p>
                                     </div><!--//section-block-->
                                 </div><!--//section-block-->                                
                                 

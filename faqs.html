@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap 4 project documentation theme for developers</title>
+    <title>Hydra renderer doc. ЧаВо.</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +24,7 @@
     
 </head> 
 
-<body class="body-blue">
+<body class="body-purple">
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
@@ -38,13 +38,13 @@
                     </h1>
                 </div><!--//branding-->
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">FAQs</li>
+                    <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+                    <li class="breadcrumb-item active">ЧаВо</li>
                 </ol>
                 <div class="top-search-box">
 	                 <form class="form-inline search-form justify-content-center" action="" method="get">
 	            
-			            <input type="text" placeholder="Search..." name="search" class="form-control search-input">
+			            <input type="text" placeholder="Поиск..." name="search" class="form-control search-input">
 			            
 			            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
 			            
@@ -55,29 +55,44 @@
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><span aria-hidden="true" class="icon icon_lifesaver"></span> FAQs</h1>
-                    <div class="meta"><i class="far fa-clock"></i> Last updated: July 18th, 2018</div>
+                    <h1 class="doc-title"><span aria-hidden="true" class="icon icon_lifesaver"></span> ЧаВо</h1>
+                    <div class="meta"><i class="far fa-clock"></i> Последнее изменение: 8 августа 2019</div>
                 </div><!--//doc-header-->
                 <div class="doc-body row">
                     <div class="doc-content col-md-9 col-12 order-1">
                         <div class="content-inner">
-                            <section id="general" class="doc-section">
-                                <h2 class="section-title">General</h2>
+                            <section id="InstallAndStart" class="doc-section">
+                                <h2 class="section-title">Установка и запуск рендера</h2>
                                 <div class="section-block">
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> Can I viverra sit amet quam eget lacinia?</h3>
-                                    <div class="answer">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere.</div>
+                                    <h3 class="question"><i class="fas fa-question-circle"></i> Я хочу обновить старую версию плагина на новую.</h3>
+                                    <div class="answer">В этом случае вам нужно удалить полностью старую версию плагина, через панель управления 
+									виндовс, и 
+									установить новую.</div>									
                                 </div><!--//section-block-->
                                 <div class="section-block">
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> What is the ipsum dolor sit amet quam tortor? <span class="badge badge-success">New</span></h3>
-                                    <div class="answer">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
+                                    <h3 class="question"><i class="fas fa-question-circle"></i> Поставил, но не работает.</h3>
+                                    <div class="answer"><div class="answer">Попробуйте установить <a href="https://aka.ms/vs/16/release/vc_redist.x64.exe">VS 
+									Redist 2017</a> (ссылка с сайта Microsoft).</div></div>
                                 </div><!--//section-block-->
                                 <div class="section-block">
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> How does the morbi quam tortor work?</h3>
-                                    <div class="answer">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis. Vestibulum vitae justo quam. Nulla luctus nunc in neque suscipit dictum. Cras faucibus magna sem, non accumsan quam interdum elementum. Pellentesque sollicitudin orci mauris, sit amet mollis nisi vehicula ut. Fusce non accumsan massa, tempus dictum leo. Suspendisse ornare ex vel imperdiet cursus.</div>
+                                    <h3 class="question"><i class="fas fa-question-circle"></i> После установки VS Redist 2017, плагины не 
+									загружаются: “error code 126 - specified module could not be found.”</h3>
+                                    <div class="answer">Скопируйте из папки bin2, установленного рендера, три dll-ки: msvcp120.dll, msvcr120.dll, 
+									vcomp120.dll, в корень папки 3ds Max.</div>
+                                    <div class="answer">Например из "C:/[Hydra]/bin2" в "c:\Program Files\Autodesk\3ds Max 2019\".</div>
+                                    <div class="answer">Если вдруг в папке 3д макса эти dll-ки уже есть, рекомендуется их предварительно сохранить.</div>
+
                                 </div><!--//section-block-->
                                 <div class="section-block">
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> How does the morbi quam tortor work? <span class="label label-warning">Updated</span></h3>
-                                    <div class="answer">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</div>
+                                    <h3 class="question"><i class="fas fa-question-circle"></i> После нажатия Render ничего не происходит.</h3>
+									<div class="jumbotron text-left">                                    
+										<div class="answer">Обычно в этом случае, в папке “logs” установленного рендера, например “C:\[Hydra]\logs\”,
+										в файле “plugin_log.txt”, ближе к концу можно встретить строчку “Can't connect to hydra.exe”.</div>
+									</div>
+									<div class="answer"> Попробуйте <strong>отключить песочницу (sandbox)</strong> в вашем антивирусе. У Касперского такой механизм
+									называется песочница. У Comodo это называется Auto sandbox. Наш рендер использует межпроцессное взаимодействие
+									для общения между плагином и рендер-сервером hydra.exe. Песочница может блокировать этот механизм.</div>
+									<div class="answer">Попробуйте запустить 3ds max <strong>с правами Администратора.</strong></div>
                                 </div><!--//section-block-->
                                 <div class="section-block">
                                     <h3 class="question"><i class="fas fa-question-circle"></i> How do I submit gravida justo ut sem feugiat?</h3>
@@ -180,7 +195,7 @@ except label:  # where to goto
                     <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
                         <div id="doc-nav" class="doc-nav">
                             <nav id="doc-menu" class="nav doc-menu flex-column sticky">
-                                <a class="nav-link scrollto" href="#general">General</a>
+                                <a class="nav-link scrollto" href="#InstallAndStart">Установка и запуск</a>
                                 <a class="nav-link scrollto" href="#features">Features</a>
                                 <a class="nav-link scrollto" href="#pricing">Pricing</a>
                                 <a class="nav-link scrollto" href="#support">Support</a>
