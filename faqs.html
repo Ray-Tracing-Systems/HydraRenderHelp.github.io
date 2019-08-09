@@ -61,29 +61,128 @@
                 <div class="doc-body row">
                     <div class="doc-content col-md-9 col-12 order-1">
                         <div class="content-inner">
-                            <section id="InstallAndStart" class="doc-section">
+							<!-- ////////////////////////////////////////////////////////////-->
+							<!-- ////////////////// Часто задаваемые вопросы ////////////////-->
+							<!-- ////////////////////////////////////////////////////////////-->
+							<section id="FAQ" class="doc-section">							
+                                <h2 class="section-title">Часто задаваемые вопросы</h2>
+								<!--
+								
+								
+								WhatMainFeatures
+								WhatFeaturesExpected
+								PluginForBlender
+								SoftShadowDirectLigh
+								HowMakeCurtains
+								HowMakeSkyPortal
+								-->
+								
+                                <div id="WhatThisHydra" class="section-block">
+                                    <h3 class="question"><i class="fas fa-question-circle"></i> Что такое Hydra Renderer?</h3>
+                                    <div class="answer">Hydra Renderer — это самостоятельный, физически корректный визуализатор на GPU и плагин 
+									для Autodesk 3ds Max, способный создавать реалистичные изображения. Разработкой занимаются российские 
+									разработчики. Движок, АПИ и плагин для 3ds Max распространяются бесплатно и с открытым исходным кодом.</div>									
+                                </div><!--//section-block-->
+								
+                                <div id="WhatVersions3dsMax" class="section-block">
+                                    <h3 class="question"><i class="fas fa-question-circle"></i> Какие версии 3ds Max поддерживаются?</h3>
+                                    <div class="answer">Поддерживаются все 64 битные версии 3ds Max 2017 - 2019.</div>
+                                </div><!--//section-block-->
+								
+                                <div id="HowReinstall" class="section-block">
+                                    <h3 class="question"><i class="fas fa-question-circle"></i> Как установить или обновить плагин?</h3>
+                                    <div class="answer">Подробно про установку можно почитать <a href="components.html#Install" target="_blank">здесь.</a></div>
+                                </div><!--//section-block-->
+
+                                <div id="WhatGIimplemented" class="section-block">
+                                    <h3 class="question"><i class="fas fa-question-circle"></i> Какие алгоритмы глобального освещения реализованы в рендере?</h3>                                    
+									<ul class="list">
+										<li>Path Tracing - трассировка путей.</li>
+										<li>IBPT - двунаправленная трассировка путей.</li>
+										<li>MMLT - multiplex metropolis light transport.</li>
+        							</ul>
+	
+									<div class="answer">Временно отключены:</div>
+									<ul class="list">
+										<li>Photon mapping.</li>
+										<li>MLT - metropolis light transport.</li>
+        							</ul>
+                                </div><!--//section-block-->
+
+                                <div id="MaterialsSupported" class="section-block">
+                                    <h3 class="question"><i class="fas fa-question-circle"></i> Поддерживаются ли материалы и источники света 
+									других рендеров?</h3>
+                                    <div class="answer">Не поддерживаются, но их можно сконвертировать в материалы и источники гидры, используя 
+									скрипт конвертер находящийся в свитке Tools настроек рендера.</div>
+									<div class="answer">Конвертер умеет конвертировать некоторые материалы и источники следующих рендеров: 
+									Scanline, Mental ray, V-Ray и Corona.</div>
+                                    <div class="answer">Даже если что-то “чужое” работает, всё равно рекомендуется это конвертировать, для 
+									большей стабильности и предсказуемости работы.</div>
+                                </div><!--//section-block-->
+
+                                <div id="WhatMainFeatures" class="section-block">
+                                    <h3 class="question"><i class="fas fa-question-circle"></i> Какие основные фичи реализованы в плагине?</h3>                                    
+									<ul class="list">
+										<li>Path Tracing - трассировка путей.</li>
+										<li>IBPT - двунаправленная трассировка путей.</li>
+										<li>MMLT - multiplex metropolis light transport.</li>
+        							</ul>
+	
+									<div class="answer">Временно отключены:</div>
+									<ul class="list">
+										<li>Photon mapping.</li>
+										<li>MLT - metropolis light transport.</li>
+        							</ul>
+                                </div><!--//section-block-->
+
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+							</section><!--//doc-section-->
+							<!-- ////////////////////////////////////////////////////////////-->
+							<!-- ///////////////// Установка и запуск рендера ///////////////-->
+							<!-- ////////////////////////////////////////////////////////////-->
+                            <section id="InstallAndStart" class="doc-section">							
                                 <h2 class="section-title">Установка и запуск рендера</h2>
-                                <div class="section-block">
+                                <div id="Reinstall" class="section-block">
                                     <h3 class="question"><i class="fas fa-question-circle"></i> Я хочу обновить старую версию плагина на новую.</h3>
                                     <div class="answer">В этом случае вам нужно удалить полностью старую версию плагина, через панель управления 
-									виндовс, и 
-									установить новую.</div>									
+									виндовс, и установить новую.</div>									
                                 </div><!--//section-block-->
-                                <div class="section-block">
+								
+                                <div id="ReinstallButNotWork" class="section-block">
                                     <h3 class="question"><i class="fas fa-question-circle"></i> Поставил, но не работает.</h3>
-                                    <div class="answer"><div class="answer">Попробуйте установить <a href="https://aka.ms/vs/16/release/vc_redist.x64.exe">VS 
-									Redist 2017</a> (ссылка с сайта Microsoft).</div></div>
+                                    <div class="answer">Попробуйте установить <a href="https://aka.ms/vs/16/release/vc_redist.x64.exe">
+									VS Redist 2017</a> (ссылка с сайта Microsoft).</div>
                                 </div><!--//section-block-->
-                                <div class="section-block">
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> После установки VS Redist 2017, плагины не 
-									загружаются: “error code 126 - specified module could not be found.”</h3>
-                                    <div class="answer">Скопируйте из папки bin2, установленного рендера, три dll-ки: msvcp120.dll, msvcr120.dll, 
-									vcomp120.dll, в корень папки 3ds Max.</div>
+								
+                                <div id="ErrorCode126" class="section-block">									
+                                    <h3 class="question"><i class="fas fa-question-circle"></i> После установки VS Redist 2017, плагин не 
+									загружается: “error code 126 - specified module could not be found.”</h3>									
+                                    <div class="answer">Скопируйте из папки bin2, установленного рендера, три dll-ки: <strong>msvcp120.dll, 
+									msvcr120.dll, vcomp120.dll</strong>, в корень папки 3ds Max.</div>
                                     <div class="answer">Например из "C:/[Hydra]/bin2" в "c:\Program Files\Autodesk\3ds Max 2019\".</div>
-                                    <div class="answer">Если вдруг в папке 3д макса эти dll-ки уже есть, рекомендуется их предварительно сохранить.</div>
-
+                                    <div class="answer">Если вдруг в папке 3д макса эти dll-ки уже есть, рекомендуется их предварительно сохранить.</div>									
                                 </div><!--//section-block-->
-                                <div class="section-block">
+								
+                                <div id="PressRenderNothing" class="section-block">
                                     <h3 class="question"><i class="fas fa-question-circle"></i> После нажатия Render ничего не происходит.</h3>
 									<div class="jumbotron text-left">                                    
 										<div class="answer">Обычно в этом случае, в папке “logs” установленного рендера, например “C:\[Hydra]\logs\”,
@@ -94,13 +193,22 @@
 									для общения между плагином и рендер-сервером hydra.exe. Песочница может блокировать этот механизм.</div>
 									<div class="answer">Попробуйте запустить 3ds max <strong>с правами Администратора.</strong></div>
                                 </div><!--//section-block-->
-                                <div class="section-block">
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> How do I submit gravida justo ut sem feugiat?</h3>
-                                    <div class="answer">Quisque rhoncus elit in ullamcorper finibus. Mauris diam ipsum, tristique id nibh at, sagittis suscipit odio. Donec lacinia consequat augue vulputate pellentesque. Donec sed vehicula purus. Aliquam ac enim non magna vulputate mattis. Proin non vulputate est, id aliquam tortor. </div>
+                                
+								<div id="RenderConsoleWrites" class="section-block">
+                                    <h3 class="question"><i class="fas fa-question-circle"></i> Консоль рендера выдаёт: “You must construct additional pylons”, “Additional supply depots required” или “Spawn more Overlords”.</h3>
+                                    <div class="answer">Если у вас появляются данные сообщения, это значит что не хватает виртуальной памяти.
+									Для ее увеличения можно попробовать <a href="http://windows.microsoft.com/en-us/windows/change-virtual-memory-size#1TC=windows-7" target="_blank">
+									увеличить размер файла подкачки Windows</a>.</div>
                                 </div><!--//section-block-->
-                                <div class="section-block">
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> Are there any gravida justo ut sem feugiat?</h3>
-                                    <div class="answer">Curabitur convallis sapien eget porttitor tincidunt. Aenean vehicula congue tortor, in ullamcorper metus porta a. Sed congue condimentum turpis vel hendrerit. Nam dapibus nunc eu tellus accumsan, viverra posuere nibh dapibus. Nam nec condimentum elit. Aliquam erat volutpat. Proin dictum est a lacus semper porta. Pellentesque nec efficitur lectus, at tincidunt felis. Etiam ultrices malesuada nulla, sit amet luctus leo semper sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                
+								<div id="StillDoesntWork" class="section-block">
+                                    <h3 class="question"><i class="fas fa-question-circle"></i> Все равно не работает.</h3>
+                                    <div class="answer">Во вкладке Tools настроек рендера, отметьте галку <strong>“log to file”</strong> и еще раз нажмите Render.
+									В папке “Logs” установленного рендера, например “C:/[Hydra]/logs”, появятся два текстовых файла: <strong>stdout.txt</strong> и
+									<strong>stderr.txt</strong>. Мы будем очень благодарны, если вы вышлете их нам на почту: <a href="mailto:info@raytracing.ru" target="_blank">
+									info@raytracing.ru</a>. Если нет возможности сделать даже вышеперечисленные действия, то в любом случае пишите
+									нам на почту или <a href="https://vk.com/hydrarenderer" target="_blank"> ВК</a>. Мы постараемся разобраться с 
+									проблемой в кратчайшие сроки.</div>
                                 </div><!--//section-block-->
                             </section><!--//doc-section-->
                             
@@ -195,10 +303,30 @@ except label:  # where to goto
                     <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
                         <div id="doc-nav" class="doc-nav">
                             <nav id="doc-menu" class="nav doc-menu flex-column sticky">
-                                <a class="nav-link scrollto" href="#InstallAndStart">Установка и запуск</a>
-                                <a class="nav-link scrollto" href="#features">Features</a>
-                                <a class="nav-link scrollto" href="#pricing">Pricing</a>
-                                <a class="nav-link scrollto" href="#support">Support</a>
+								<a class="nav-link scrollto" href="#FAQ">Часто задаваемые вопросы</a>
+									<nav class="doc-sub-menu nav flex-column">
+										<a class="nav-link scrollto" href="#WhatThisHydra">Что такое Hydra Renderer?</a>
+										<a class="nav-link scrollto" href="#WhatVersions3dsMax">Какие версии 3ds Max поддерживаются?</a>
+										<a class="nav-link scrollto" href="#HowReinstall">Как установить или обновить плагин?</a>
+										<a class="nav-link scrollto" href="#WhatGIimplemented">Какие алгоритмы глобального освещения реализованы в рендере?</a>
+										<a class="nav-link scrollto" href="#MaterialsSupported">Поддерживаются ли материалы и источники света других рендеров?</a>
+										<a class="nav-link scrollto" href="#WhatMainFeatures">Какие основные фичи реализованы в плагине?</a>
+										<a class="nav-link scrollto" href="#WhatFeaturesExpected">Какие фичи ожидаются в ближайшем будущем?</a>
+										<a class="nav-link scrollto" href="#PluginForBlender">Будет ли сделан плагин для Blender, Cinema 4D и других?</a>
+										<a class="nav-link scrollto" href="#SoftShadowDirectLight">Как сделать мягкую тень от Direct Light?</a>
+										<a class="nav-link scrollto" href="#HowMakeCurtains">Как сделать шторы или тюль?</a>
+										<a class="nav-link scrollto" href="#HowMakeSkyPortal">Как сделать Sky Portal?</a>
+									</nav><!--//nav-->
+                                <a class="nav-link scrollto" href="#InstallAndStart">Установка и запуск рендера</a>
+									<nav class="doc-sub-menu nav flex-column">
+										<a class="nav-link scrollto" href="#Reinstall">Я хочу обновить старую версию плагина на новую.</a>
+										<a class="nav-link scrollto" href="#ReinstallButNotWork">Поставил, но не работает.</a>
+										<a class="nav-link scrollto" href="#ErrorCode126">“error code 126 - specified module could not be found.”</a>
+										<a class="nav-link scrollto" href="#PressRenderNothing">После нажатия Render ничего не происходит.</a>
+										<a class="nav-link scrollto" href="#RenderConsoleWrites">Консоль рендера выдаёт: “You must construct 
+										additional pylons”, “Additional supply depots required” или “Spawn more Overlords”.</a>
+										<a class="nav-link scrollto" href="#StillDoesntWork">Все равно не работает.</a>
+									</nav><!--//nav-->                                
                             </nav><!--//doc-menu-->
                         </div>
                     </div><!--//doc-sidebar-->
