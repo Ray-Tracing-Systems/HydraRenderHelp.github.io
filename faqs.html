@@ -139,22 +139,6 @@
 								
 								
 								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
 							</section><!--//doc-section-->
 							<!-- ////////////////////////////////////////////////////////////-->
 							<!-- ///////////////// Установка и запуск рендера ///////////////-->
@@ -167,136 +151,40 @@
 									виндовс, и установить новую.</div>									
                                 </div><!--//section-block-->
 								
-                                <div id="ReinstallButNotWork" class="section-block">
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> Поставил, но не работает.</h3>
+                                <div id="ErrorCode126" class="section-block">
+                                    <h3 class="question"><i class="fas fa-question-circle"></i> Плагин не загружается: “error code 126 - specified module could not be found.”</h3>
                                     <div class="answer">Попробуйте установить <a href="https://aka.ms/vs/16/release/vc_redist.x64.exe">
 									VS Redist 2017</a> (ссылка с сайта Microsoft).</div>
                                 </div><!--//section-block-->
 								
                                 <div id="ErrorCode126" class="section-block">									
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> После установки VS Redist 2017, плагин не 
-									загружается: “error code 126 - specified module could not be found.”</h3>									
-                                    <div class="answer">Скопируйте из папки bin2, установленного рендера, три dll-ки: <strong>msvcp120.dll, 
-									msvcr120.dll, vcomp120.dll</strong>, в корень папки 3ds Max.</div>
-                                    <div class="answer">Например из "C:/[Hydra]/bin2" в "c:\Program Files\Autodesk\3ds Max 2019\".</div>
-                                    <div class="answer">Если вдруг в папке 3д макса эти dll-ки уже есть, рекомендуется их предварительно сохранить.</div>									
+                                    <h3 class="question"><i class="fas fa-question-circle"></i> После запуска рендера проскакивает консоль и ничего не происходит.</h3>									
+                                    <div class="answer">Во вкладке Tools настроек рендера, отметьте галку “log to file” и нажмите Render. В папке “Logs” установленного рендера, например “C:/[Hydra]/logs”, появятся файлы с логами. В конце этих файлов могут быть следующая информация об ошибках:</div>
+                                    <ul class="list">
+										<li>"Can't connect to hydra.exe" (plugin_log.txt).</li>                                        
+                                        <div class="answer">Попробуйте отключить песочницу (sandbox) в вашем антивирусе. У Касперского такой механизм называется песочница. У Comodo это называется Auto sandbox. Наш рендер использует межпроцессное взаимодействие для общения между плагином и рендер-сервером hydra.exe. Песочница может блокировать этот механизм.</div>
+                                        <div class="answer">Попробуйте запустить 3ds max с правами Администратора.</div>
+                                        
+										<li>"You must construct additional pylons", "Additional supply depots required" или "Spawn more Overlords" (stdout.txt).</li>                   
+                                        <div class="answer">Если у вас появляются данные сообщения, это значит что не хватает виртуальной памяти. Для ее увеличения можно попробовать увеличить размер файла подкачки Windows.</div>
+                                        
+										<li>"CL_DEVICE_NOT_FOUND" (stdout.txt).</li>                                        
+                                        <div class="answer">Нажмите кнупку “пуск” виндовса, и напишите regedit. Запустится редактор реестра. Далее найдите и удалите, переменную REG_DWORD в двух местах, если она там есть:</div>
+                                        <div class="answer">HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\OpenCL\Vendors                                        HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Khronos\OpenCL\Vendors</div>
+                                        <div class="answer">После удаления переставьте драйвера видеокарты с опцией “чистая установка”.</div>                                        
+        							</ul>                                    									
                                 </div><!--//section-block-->
 								
-                                <div id="PressRenderNothing" class="section-block">
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> После нажатия Render ничего не происходит.</h3>
-									<div class="jumbotron text-left">                                    
-										<div class="answer">Обычно в этом случае, в папке “logs” установленного рендера, например “C:\[Hydra]\logs\”,
-										в файле “plugin_log.txt”, ближе к концу можно встретить строчку “Can't connect to hydra.exe”.</div>
-									</div>
-									<div class="answer"> Попробуйте <strong>отключить песочницу (sandbox)</strong> в вашем антивирусе. У Касперского такой механизм
-									называется песочница. У Comodo это называется Auto sandbox. Наш рендер использует межпроцессное взаимодействие
-									для общения между плагином и рендер-сервером hydra.exe. Песочница может блокировать этот механизм.</div>
-									<div class="answer">Попробуйте запустить 3ds max <strong>с правами Администратора.</strong></div>
-                                </div><!--//section-block-->
                                 
-								<div id="RenderConsoleWrites" class="section-block">
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> Консоль рендера выдаёт: “You must construct additional pylons”, “Additional supply depots required” или “Spawn more Overlords”.</h3>
-                                    <div class="answer">Если у вас появляются данные сообщения, это значит что не хватает виртуальной памяти.
-									Для ее увеличения можно попробовать <a href="http://windows.microsoft.com/en-us/windows/change-virtual-memory-size#1TC=windows-7" target="_blank">
-									увеличить размер файла подкачки Windows</a>.</div>
-                                </div><!--//section-block-->
                                 
 								<div id="StillDoesntWork" class="section-block">
                                     <h3 class="question"><i class="fas fa-question-circle"></i> Все равно не работает.</h3>
-                                    <div class="answer">Во вкладке Tools настроек рендера, отметьте галку <strong>“log to file”</strong> и еще раз нажмите Render.
-									В папке “Logs” установленного рендера, например “C:/[Hydra]/logs”, появятся два текстовых файла: <strong>stdout.txt</strong> и
-									<strong>stderr.txt</strong>. Мы будем очень благодарны, если вы вышлете их нам на почту: <a href="mailto:info@raytracing.ru" target="_blank">
-									info@raytracing.ru</a>. Если нет возможности сделать даже вышеперечисленные действия, то в любом случае пишите
-									нам на почту или <a href="https://vk.com/hydrarenderer" target="_blank"> ВК</a>. Мы постараемся разобраться с 
-									проблемой в кратчайшие сроки.</div>
+                                    <div class="answer">Мы будем очень благодарны, если вы вышлете эти логи нам на почту: info@raytracing.ru. Если нет возможности сделать даже вышеперечисленные действия, то в любом случае пишите нам на почту или <a href="https://vk.com/hydrarenderer">ВК</a>. Мы постараемся разобраться с проблемой в кратчайшие сроки.</div>
                                 </div><!--//section-block-->
                             </section><!--//doc-section-->
                             
-                            <section id="features" class="doc-section">
-                                <h2 class="section-title">Features</h2>
-                                <div class="section-block">
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> Why am I getting congue condimentum turpis?</h3>
-                                    <div class="answer">
-                                        <p>Curabitur convallis sapien eget porttitor tincidunt. Aenean vehicula congue tortor, in ullamcorper metus porta a. Sed congue condimentum turpis vel hendrerit. Nam dapibus nunc eu tellus accumsan, viverra posuere nibh dapibus. Nam nec condimentum elit. Aliquam erat volutpat. Proin dictum est a lacus semper porta. Pellentesque nec efficitur lectus, at tincidunt felis. Etiam ultrices malesuada nulla, sit amet luctus leo semper sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        <pre><code class="language-python">class label: pass  # declare a label
-
-try:
-     ...
-     if condition: raise label()  # goto label
-     ...
-except label:  # where to goto
-     pass
-...</code></pre>
-                                        <p>Duis ligula ante, lobortis pretium maximus ut, mattis quis augue. Curabitur vel posuere lorem, sit amet consectetur orci. Sed mollis eget nisi eu aliquam.</p>
-                                    </div><!--//anwser-->
-                                    
-                                    <div class="section-block">
-                                        <h3 class="question"><i class="fas fa-question-circle"></i> How are gravida implemented?</h3>
-                                        <div class="answer">
-                                            <p>Curabitur convallis sapien eget porttitor tincidunt. Aenean vehicula congue tortor, in ullamcorper metus porta a. Sed congue condimentum turpis vel hendrerit. Nam dapibus nunc eu tellus accumsan, viverra posuere nibh dapibus. Nam nec condimentum elit. Aliquam erat volutpat. Proin dictum est a lacus semper porta. Pellentesque nec efficitur lectus, at tincidunt felis. Etiam ultrices malesuada nulla, sit amet luctus leo semper sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                            
-                                            
-                                            </div>
-                                    </div><!--//section-block-->
-                                    
-                                    <div class="section-block">
-                                        <h3 class="question"><i class="fas fa-question-circle"></i> How does vehicula manage congue tortor?</h3>
-                                        <div class="answer">Curabitur convallis sapien eget porttitor tincidunt. Aenean vehicula congue tortor, in ullamcorper metus porta a. Sed congue condimentum turpis vel hendrerit. Nam dapibus nunc eu tellus accumsan, viverra posuere nibh dapibus. Nam nec condimentum elit. Aliquam erat volutpat. Proin dictum <code>&#x3C;div&#x3E;...&#x3C;/div&#x3E;</code> est a lacus semper porta. Pellentesque nec efficitur lectus, at tincidunt felis. Etiam ultrices malesuada nulla, sit amet luctus leo semper sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-                                    </div><!--//section-block-->
-                                    
-                                    <div class="section-block">
-                                        <h3 class="question"><i class="fas fa-question-circle"></i> Why does vehicula manage congue tortor?</h3>
-                                        <div class="answer">Aliquam a dui turpis. In vel tellus eget erat ullamcorper egestas at et lectus. Fusce a consectetur nisi, malesuada volutpat tellus. Nam ut urna nec urna dictum dictum sagittis id lacus. Aliquam auctor dapibus est, sit amet vehicula purus sollicitudin a. Morbi pulvinar euismod quam et aliquam. In hac habitasse platea dictumst. Quisque vel euismod sem, sit amet viverra justo.</div>
-                                    </div><!--//section-block-->
-                                    
-                                    <div class="section-block">
-                                        <h3 class="question"><i class="fas fa-question-circle"></i> Why does vehicula manage congue tortor?</h3>
-                                        <div class="answer">Quisque dignissim, lectus ac pretium dapibus, nunc arcu ornare nunc, et aliquam odio augue vitae eros. Cras vel risus quam. Aenean ultricies molestie purus bibendum lobortis. Curabitur vehicula, nisi ut tincidunt consequat, augue mi volutpat nisl, id posuere felis lectus quis quam. Donec at eros consequat, cursus eros eget, ornare mauris. Proin semper tincidunt dapibus. Etiam ornare, nibh eu dapibus pellentesque, magna metus dapibus neque, euismod fringilla nulla orci eu dolor. Mauris convallis rutrum efficitur. Integer sagittis nisi in ante convallis tempor. In placerat, velit quis laoreet sollicitudin, massa est sagittis massa, quis viverra diam nibh vitae sapien. Nunc facilisis nisl non condimentum pretium. Duis nec metus venenatis, hendrerit nisi maximus, consequat erat. Morbi odio mauris, aliquam eu bibendum vel, pulvinar at sem. Nunc sit amet elementum nisl, ac malesuada nibh. Vestibulum imperdiet dui non venenatis bibendum.</div>
-                                    </div><!--//section-block-->
-                                    
-                                    
-                                </div><!--//section-block-->
-                            </section><!--//doc-section-->
                             
-                            <section id="pricing" class="doc-section">
-                                <h2 class="section-title">Pricing</h2>
-                                <div class="section-block">
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> How much is magna at posuere? <span class="label label-success">New</span></h3>
-                                    <div class="answer">Curabitur nec ipsum placerat, accumsan justo eu, imperdiet augue. Praesent eget mattis erat. Donec dolor odio, maximus quis est ut, bibendum pharetra ante. Sed faucibus nec dui sed elementum. Nullam aliquet, dui at bibendum egestas, lorem metus euismod libero, ut porta risus felis eget odio. Aenean tincidunt magna at posuere semper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-                                </div><!--//section-block-->
-                                <div class="section-block">
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> Can I risus felis eget odio?</h3>
-                                    <div class="answer">Curabitur nec ipsum placerat, accumsan justo eu, imperdiet augue. Praesent eget mattis erat. Donec dolor odio, maximus quis est ut, bibendum pharetra ante. Sed faucibus nec dui sed elementum. Nullam aliquet, dui at bibendum egestas, lorem metus euismod libero, ut porta risus felis eget odio. Aenean tincidunt magna at posuere semper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-                                </div><!--//section-block-->
-                                <div class="section-block">
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> Can I purus lobortis nibh?</h3>
-                                    <div class="answer">Ut cursus, felis vel vulputate dictum, nisi mauris aliquam mi, sed venenatis leo sem eu diam. Etiam pulvinar aliquet eros, vitae consequat ex consectetur eu. Nulla non purus a orci volutpat scelerisque. Aliquam consequat lacus eu ante ornare mattis. Praesent vitae est ut nibh maximus auctor. Donec eget sem eget lectus eleifend ullamcorper sit amet vel quam.</div>
-                                </div><!--//section-block-->
-                                <div class="section-block">
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> Why consequat lacus eu ante?</h3>
-                                    <div class="answer">Nulla a convallis augue, eget scelerisque sapien. Nulla ut purus lobortis nibh viverra auctor eget vitae sem. Quisque mi odio, eleifend ac mollis vel, laoreet a risus. Morbi ullamcorper luctus est, in mollis lorem ullamcorper vel. Phasellus et dolor purus. Mauris auctor ullamcorper mauris sollicitudin aliquet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-                                </div><!--//section-block-->
-                            </section><!--//doc-section-->
                             
-                            <section id="support" class="doc-section">
-                                <h2 class="section-title">Support</h2>
-                                <div class="section-block">
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> Quisque consectetur iaculis odio</h3>
-                                    <div class="answer">Nulla a convallis augue, eget scelerisque sapien. Nulla ut purus lobortis nibh viverra auctor eget vitae sem. Quisque mi odio, eleifend ac mollis vel, laoreet a risus. Morbi ullamcorper luctus est, in mollis lorem ullamcorper vel. Phasellus et dolor purus. Mauris auctor ullamcorper mauris sollicitudin aliquet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-                                </div><!--//section-block-->
-                                <div class="section-block">
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> Duis maximus mollis sit amet pharetra?</h3>
-                                    <div class="answer">Nulla a convallis augue, eget scelerisque sapien. Nulla ut purus lobortis nibh viverra auctor eget vitae sem. Quisque mi odio, eleifend ac mollis vel, laoreet a risus. Morbi ullamcorper luctus est, in mollis lorem ullamcorper vel. Phasellus et dolor purus. Mauris auctor ullamcorper mauris sollicitudin aliquet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-                                </div><!--//section-block-->
-                                <div class="section-block">
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> Pellentesque habitant morbi tristique senectus?</h3>
-                                    <div class="answer">
-                                        <p>Nulla a convallis augue, eget scelerisque sapien. Nulla ut purus lobortis nibh viverra auctor eget vitae sem. Quisque mi odio, eleifend ac mollis vel, laoreet a risus. Morbi ullamcorper luctus est, in mollis lorem ullamcorper vel. Phasellus et dolor purus. Mauris auctor ullamcorper mauris sollicitudin aliquet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                                        <p>Integer ornare tristique massa, et efficitur diam. Quisque consectetur iaculis odio, in aliquet magna suscipit eget. Sed sollicitudin facilisis risus vitae mattis. Vivamus facilisis, lacus eu rutrum gravida, ante sapien semper lectus, eget venenatis lorem massa porta sapien. Curabitur facilisis egestas erat, vel facilisis ipsum laoreet sit amet. Sed fermentum metus eget semper semper. Pellentesque imperdiet accumsan dolor eu convallis. Donec dictum justo a leo pellentesque placerat. Maecenas non diam ac elit tincidunt convallis ut nec eros.</p>
-                                        
-                                    </div>
-                                </div><!--//section-block-->
-                            </section><!--//doc-section-->
                                                         
                         </div><!--//content-inner-->
                     </div><!--//doc-content-->
@@ -319,13 +207,10 @@ except label:  # where to goto
 									</nav><!--//nav-->
                                 <a class="nav-link scrollto" href="#InstallAndStart">Установка и запуск рендера</a>
 									<nav class="doc-sub-menu nav flex-column">
-										<a class="nav-link scrollto" href="#Reinstall">Я хочу обновить старую версию плагина на новую.</a>
-										<a class="nav-link scrollto" href="#ReinstallButNotWork">Поставил, но не работает.</a>
-										<a class="nav-link scrollto" href="#ErrorCode126">“error code 126 - specified module could not be found.”</a>
-										<a class="nav-link scrollto" href="#PressRenderNothing">После нажатия Render ничего не происходит.</a>
-										<a class="nav-link scrollto" href="#RenderConsoleWrites">Консоль рендера выдаёт: “You must construct 
-										additional pylons”, “Additional supply depots required” или “Spawn more Overlords”.</a>
-										<a class="nav-link scrollto" href="#StillDoesntWork">Все равно не работает.</a>
+										<a class="nav-link scrollto" href="#Reinstall">Я хочу обновить старую версию плагина на новую</a>										
+										<a class="nav-link scrollto" href="#ErrorCode126">“error code 126”</a>
+										<a class="nav-link scrollto" href="#PressRenderNothing">После запуска рендера проскакивает консоль и ничего не происходит</a>		
+										<a class="nav-link scrollto" href="#StillDoesntWork">Все равно не работает</a>
 									</nav><!--//nav-->                                
                             </nav><!--//doc-menu-->
                         </div>
