@@ -1026,6 +1026,40 @@ select {
   color: #40babd;
 }
 
+.doc-sub3-menu {
+  list-style: none;
+  padding-left: 0;
+}
+
+.doc-sub3-menu .nav-link {
+  margin-bottom: 10px;
+  font-size: 11px;
+  display: block;
+  color: #616670;
+  padding: 0;
+  padding-left: 102px; 
+  background: none;
+}
+
+.doc-sub3-menu .nav-link:first-child {
+  padding-top: 0px;
+}
+
+.doc-sub3-menu .nav-link:hover {
+  color: #494d55;
+  text-decoration: none;
+  background: none;
+}
+
+.doc-sub3-menu .nav-link:focus {
+  background: none;
+}
+
+.doc-sub3-menu .nav-link.active {
+  background: none;
+  color: #40babd;
+}
+
 .body-green .doc-sub-menu .nav-link.active {
   color: #75c181;
 }

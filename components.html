@@ -56,7 +56,7 @@
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title"><span aria-hidden="true" class="icon icon_puzzle_alt"></span> Компоненты</h1>
-                    <div class="meta"><i class="far fa-clock"></i> Последнее изменение: 9 июля 2020</div>
+                    <div class="meta"><i class="far fa-clock"></i> Последнее изменение: 10 июля 2020</div>
                 </div><!--//doc-header-->
                 <div class="doc-body row" >
                     <div class="doc-content col-md-9 col-12 order-1">
@@ -198,47 +198,48 @@
 											</ul>
                                         </div>
                                     </div>
-									
-									
+																		
                                     
                                         
                                         
                                     <!--///////////////////////// Diffuse /////////////////////////-->
-                                    <h5>Diffuse</h5>
-									<p>Диффузное отражение, это рассеянное отражение света во все стороны от поверхности. 
-									Это то, какими мы видим большинство неметаллических предметов, без учёта блика. Мы используем 
-									распространённую модель Ламберта.</p> 
-									
-									<ul class="list">
-										<li><strong>Roughness</strong> - это реализация алгоритма Oren-Nayar, который более точно описывает поверхности с 
-										сильным микрорельефом, где присутствует самозатенение микро граней поверхности, например такие как 
-										ткани, ворс, сыпучие объекты (песок, грунт), асфальт, необработанная древесина и т.д.</li>
-									</ul>
+                                    <div id="Diffuse" class="section-block">
+                                        <h5>Diffuse</h5>
+                                        <p>Диффузное отражение, это рассеянное отражение света во все стороны от поверхности. 
+                                        Это то, какими мы видим большинство неметаллических предметов, без учёта блика. Мы используем 
+                                        распространённую модель Ламберта.</p> 
 
-                                    
-                                        
+                                        <ul class="list">
+                                            <li><strong>Roughness</strong> - это реализация алгоритма Oren-Nayar, который более точно описывает поверхности с 
+                                            сильным микрорельефом, где присутствует самозатенение микро граней поверхности, например такие как 
+                                            ткани, ворс, сыпучие объекты (песок, грунт), асфальт, необработанная древесина и т.д.</li>
+                                        </ul>
+                                    </div><!--//Diffuse section-block-->
+
+                                                                            
                                         
                                         
                                     <!--///////////////////////// Reflectivity /////////////////////////-->
-                                    <h5>Reflectivity</h5>
-									<p>Данная компонента отвечает за зеркальные отражательные свойства, проще говоря блики.</p> 
-									
-									
-                                        <!--/// Glossiness ///-->									
-									<ul class="list">
-										<li><strong>Glossiness</strong></li>
-									
-                                        <p>Этот параметр рассеивает отражения, сводя их к почти диффузному. 1- соответствует полностью зеркальному
-                                        отражению, 0 - рассеянному. В некоторых рендерах используется параметр Roughness - шероховатость,
-                                        это инвертированный glossiness.</p>
+                                    <div id="Reflectivity" class="section-block">
+                                        <h5>Reflectivity</h5>
+                                        <p>Данная компонента отвечает за зеркальные отражательные свойства, проще говоря блики.</p> 
 
-                                        <p>Разные модели отражений (BRDF) по разному ведут себя при малой глянцевости (большой шероховатости) и не
-                                        всегда совпадают с обычной диффузией.</p>
+                                            <!--/// Glossiness ///-->									
+                                        <ul class="list">
+                                            <li><strong>Glossiness</strong></li>
 
-                                        <img class="img-fluid" src="assets/images/Components/ReflGlossiness.jpg" alt="ReflGlossiness">									
-                                        <p class="text-center">Материалы с различными значениями glossiness (0.25, 0.5, 0.75).</p>									
-									</ul>
-																	
+                                            <p>Этот параметр рассеивает отражения, сводя их к почти диффузному. 1- соответствует полностью зеркальному
+                                            отражению, 0 - рассеянному. В некоторых рендерах используется параметр Roughness - шероховатость,
+                                            это инвертированный glossiness.</p>
+
+                                            <p>Разные модели отражений (BRDF) по разному ведут себя при малой глянцевости (большой шероховатости) и не
+                                            всегда совпадают с обычной диффузией.</p>
+
+                                            <img class="img-fluid" src="assets/images/Components/ReflGlossiness.jpg" alt="ReflGlossiness">									
+                                            <p class="text-center">Материалы с различными значениями glossiness (0.25, 0.5, 0.75).</p>									
+                                        </ul>
+                                    
+                                        
 									
                                     <!--/// Fresnel ///-->									
 									<ul class="list">
@@ -425,11 +426,15 @@
                                         <p>Оба способа имеют право на жизнь, но метод Strong нам кажется более интуитивным, поэтому он выставлен в 
                                         настройках по умолчанию.</p>
 									</ul>
+                                    </div> <!--//Reflectivity section-block-->
+                                        
                                         
                                         
                                     									
 									<!--///////////////////////// Transparency /////////////////////////-->
+                                    <div id="Transparency" class="section-block">    
                                     <h5>Transparency</h5>
+                                        
 									<img class="img-fluid" src="assets/images/Components/Transparency.jpg" alt="Extrusion">
 									<p>Эта группа параметров отвечает за прозрачность материала с учётом преломлений и внутренних переотражений.</p> 
 																		
@@ -627,10 +632,12 @@
                                         Это связано с особенностью расчётов преломлений, для тонких объектов они немного отличаются.</p>
 
 									</ul>
-
+                                    </div> <!--//Transparency section-block-->
+                                        
 
                                         
                                     <!--///////////////////////// Opacity/Special /////////////////////////-->
+                                    <div id="OpacitySpecial" class="section-block">
                                     <h5>Opacity/Special</h5>									
 									<p>Группа параметров связанная с непрозрачностью материала.</p> 
                                         
@@ -639,10 +646,12 @@
                                         <li><strong>Cast shadows</strong> - вкл./выкл. тени объекта.</li>
                                         <li><strong>Smooth </strong> - включение всех полутонов текстуры в opacity, что немного замедляет просчет. Для текстур с резкими краями, например листьев или травы, этот параметр можно отключить и получить небольшой выигрыш в скорости просчета.</li>
                                     </ul>
+                                    </div><!--//OpacitySpecial section-block-->
 
-
+                                    
                                         
                                     <!--///////////////////////// Translucency /////////////////////////-->
+                                    <div id="Translucency" class="section-block">
                                     <h5>Translucency</h5>									
                                         
                                     <img class="img-fluid" src="assets/images/Components/Translucency.jpg" alt="Translucency">
@@ -656,10 +665,12 @@
                                     <p class="text-center"><img class="img-fluid" src="assets/images/Components/MatEditorBackLightOff.png" alt="MatEditorBackLightOff"></p>
                                         
                                     <p>Так же не следует ожидать полностью физически корректной симуляции подповерхностного рассеивания (SSS) для объемных тел.</p>
+                                    </div><!--//Translucency section-block-->
                                         
                                         
                                         
                                     <!--///////////////////////// Emission /////////////////////////-->
+                                    <div id="Emission" class="section-block">
                                     <h5>Emission</h5>									
                                                                                                         
                                     <p>Emission используется для самосвечения объектов. Например, экран телевизора или плоскость с панорамой города за окном. Стоит учесть, что светящиеся меши сэмплятся в Hydra только при помощи неявной стратегии сэмплирования. Это означает, такой источник учитывается только тогда, когда отраженный луч попал в него случайно. Такая модель хорошо работает, если объект имеет крупный размер или эмиссия не слишком яркая. Поэтому если Вам нужно смоделировать яркий источник света маленького размера, Emission для этого использовать не рекомендуется, лучше создать источник света явно или воспользоваться материалом HydraMtlLight.  
@@ -674,10 +685,12 @@
                                         
                                         <p>В версии рендера 2.3b появился материал HydraMtlLight, который позволяет делать свет от таких плоскостей с фотографией с высокой скоростью просчета, как у обычного источника.</p>                                        
                                     </ul>
+                                    </div><!--//Emission section-block-->
                                         
                                         
                                         
                                     <!--///////////////////////// Relief /////////////////////////-->
+                                    <div id="Relief" class="section-block">
                                     <h5>Relief</h5>
                                         
                                     <p>Данная вкладка служит для настройки микрорельефа поверхности на основе текстур или по другому говоря — карт, содержащих информацию о нормалях (Normal map) и высот (Height map, обычный бамп). Этот рельеф лишь имитация, поэтому подходит для не слишком сильного рельефа.</p>
@@ -698,8 +711,9 @@
                                     </ul>
                                         
                                     <p>Параллакс временно недоступен.</p>
+                                    </div><!--//Relief section-block-->
                                         
-                            </div><!--//section-block-->
+                            </div><!--//HydraMtl section-block-->
 
                                     
                                     
@@ -737,11 +751,15 @@
                                     <!-- ////////////////////////////////////////////////////////////-->
                                     <div id="HydraMtlCatcher" class="section-block">
                                         <h4 class="block-title">HydraMtlCatcher</h4>
-                                        <p>HydraMtlCatcher - материал.</p>                                        
+                                        
+                                        <p>Этот материал нужен для встраивания объекта в фон. Он прозрачен и принимает тень. При использовании в энвайронменте карты HydraBack/Envir, на кетчер проецируется текстура из слота Background и другие, видимые объекты, начинают получать корректные отражения как будто от фона.</p>                             
+                                        <p class="text-center"><img class="img-fluid" src="assets/images/Components/CatcherAndBackEnvir.png" alt="CatcherAndBackEnvir"></p>
+                                        <p class="text-center">Пример встраивания объектов: чайник, тор, сфера и рюмка, в фон.</p>
+                                        
+                                        <p>В данном примере, на столе расположена плоскость с материалом HydraMtlCatcher. В энвайронменте используется карта HydraBack/Envir, в фоне которого используется картинка со столом, рюмками на ней, и стульями. В энвайронменте хдр панорама с похожим сюжетом, которая освещает 3д объекты и формирует на них отражения. Хдр панорама немного затонирована в желтоватый цвет, чтобы освещение совпадало по цветовой гамме с фоном. Плоскость кэтчера получает тени от 3д объектов и является источником для отражений в них.</p>                                        
                                     </div><!--//section-block-->
                                     
-                                    
-                                    
+                                                                        
                                     
 
                                     <!-- ////////////////////////////////////////////////////////////-->
@@ -749,33 +767,151 @@
                                     <!-- ////////////////////////////////////////////////////////////-->
                                     <div id="DoubleSided" class="section-block">
                                         <h4 class="block-title">Double sided</h4>
-                                        <p>Double sided - материал.</p>                                        
+                                        <p>Материал не поддерживается. Если вы хотите создать просвечивающий материал для поверхности без толщины, типа штор или листьев деревьев, используйте настройку Translucent в HydraMtl.</p>                                        
                                     </div><!--//section-block-->
 
+                                                                        
+                                    
+                                    
                                     <!-- ////////////////////////////////////////////////////////////-->
                                     <!-- //////////////// Материалы сторонних рендеров //////////////-->
                                     <!-- ////////////////////////////////////////////////////////////-->
                                     <div id="OtherMtl" class="section-block">
                                         <h4 class="block-title">Материалы сторонних рендеров</h4>
-                                        <p>Текст, текст, текст</p>                                        
+                                        <p>Материалы сторонних рендеров не поддерживаются, но их можно конвертировать в материал гидры, используя скрипт конвертер находящийся в свитке Tools. Даже если какие-то материалы работают, всё равно рекомендуется конвертировать их, для большей стабильности и предсказуемости работы.	</p>                                        
                                     </div><!--//section-block-->                                                                      
                                 </div><!--//section-block-->
+                                
+                                
+                                
+                                
                                 
                                 <!-- ////////////////////////////////////////////////////////////-->
                                 <!-- ////////////////////////// Текстуры ///////////////////////-->
                                 <!-- ////////////////////////////////////////////////////////////-->
                                 <div id="Textures" class="section-block">
                                     <h3 class="block-title">Текстуры</h3>
-                                    <p>текст текст текст.</p>    
+                                    <p>Hydra Renderer поддерживает все основные битмап и процедурные текстуры. В том числе работают специфические color correction и composite.</p>    
+                                    <p>На данный момент мапы HydraAO, HydraBlendedBox а также Falloff имеют внутреннее процедурное представление в движке, и их пока нельзя вкладывать друг в друга. </p>
 
+                                    
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <!-- //////////////// Falloff //////////////-->
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <div id="Falloff" class="section-block">
+                                        <h4 class="block-title">Falloff <span class="badge badge-success">Новое в 2.5</span></h4>
+                                        
+                                        <p>Гидра возобновляет поддержку стандартного фаллоффа 3ds max, но в связи с новыми архитектурными решениями ядра, разработка фаллоффа только начата и пока работает только смена цвета. Falloff type временно используется всегда по Френелю с IOR равным 1.5.</p>     
+                                        <p>Так же фаллофф можно использовать в качестве маски в стандартном бленд материале, для смешивания двух материалов, например для создания дополнительного покрытия лаком (coating). Для этого базовый материал остаётся как есть, а материал покрытия должен быть чистым зеркалом, с выключенным Френелем. В этом случае он “ляжет” поверх базового материала по Френелю, что будет физ.корректно.</p>
+                                        <p>Этот подход является более гибким. чем вынос параметра Coating в основной материал, т.к. вы можете материал для покрытия сделать любым, это полноценный материал в котором может быть свой рельеф (бамп), свои текстуры для отражений и глосси и т.д. Дублировать всё это в основной материал нам представляется не целесообразно.</p>
+                                        <p>Для создания более сложных материалов может понадобиться вкладывать бленд в бленд. Это не удобно, поэтому в дальнейшем мы планируем создать слоёный материал, представляющий собой расширенный бленд материал на несколько слоёв. Это позволит создавать многослойные материалы без необходимости вкладывать бленд в бленд.</p>
+                                        
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12 col-sm-12">                                            
+                                                <img class="img-fluid" src="assets/images/Components/No_Coat.png" alt="No_Coat"> 
+                                            </div>
+                                             <div class="col-md-6 col-sm-12 col-sm-12">                                            
+                                                <img class="img-fluid" src="assets/images/Components/Coat.png" alt="Coat"> 
+                                            </div>                                      
+                                        </div><!--//row-->
+                                        <p class="text-center">Без покрытия и с покрытием.</p>
+                                        
+                                        <p>Обратите внимание, в варианте без покрытия тоже используются отражения, просто они в этом примере не так явно видны.</p>
+
+                                        <p>Таким же способом, можно имитировать ворсинки на тканях. В этом случае материал покрытия вместо зеркала делается просто диффузным с нужным цветом ворсинок. В основном это или более светлые текстуры базового материала или просто какой-то более светлый средний цвет текстур.</p>
+                                        
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12 col-sm-12">                                            
+                                                <img class="img-fluid" src="assets/images/Components/No_Sheen-Fuzz.png" alt="No_Sheen-Fuzz"> 
+                                            </div>
+                                             <div class="col-md-6 col-sm-12 col-sm-12">                                            
+                                                <img class="img-fluid" src="assets/images/Components/Sheen-Fuzz.png" alt="Sheen-Fuzz"> 
+                                            </div>                                      
+                                        </div><!--//row-->
+                                        <p class="text-center">Имитация ворсинок на тканях.</p>                                        
+                                    </div><!--//section-block-->                                                                 
+                                
+                                    
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <!-- //////////////// HydraAO //////////////-->
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <div id="HydraAO" class="section-block">
+                                        <h4 class="block-title">HydraAO <span class="badge badge-success">Новое в 2.5</span></h4>
+                                        
+                                        <p class="text-center"><img class="img-fluid" src="assets/images/Components/HydraAO.png" alt="HydraAO"></p> 
+                                        
+                                        <p>Карта AO (ambient occlusion) не является каким-то физическим явлением, но позволяет имитировать разные эффекты, связанные с равномерным затеннением в углах моделей. Например имитация глобального освещения, грязь, подчёркивания контактных теней и подобных.</p>                     
+                                        
+                                        <p class="text-center"><img class="img-fluid" src="assets/images/Components/HydraAO_GUI.png" alt="HydraAO_GUI"></p>              
+                                    
+                                        <ul class="list">
+                                            <li><strong>Occluded color</strong> - цвет перекрывающихся, вогнутых областей.</li>
+                                            <li><strong>Unoccluded color</strong> - цвет не перекрывающихся, выпуклых областей.</li>           
+                                            <li><strong>Distance</strong> - дистанция перекрытия.</li>
+                                            <li><strong>Calculate for</strong> - в текущей версии реализован только режим Concave (вогнутый). В дальнейшем планируется добавить режим Convex (выпуклый), позволяющий создавать этот эффект на выпуклых участках, например для создания потёртостей на рёбрах объектов.</li>
+                                            <li><strong>Falloff</strong> - плавность перехода.</li>
+                                            <li><strong>Only for this object</strong> (в разработке) - опция для отключения приёма окклюжена от других объектов. Нужен для эффектов не сильно зависящих от окружающих объектов. Например для ржавчины на металлическом объекте, или для анимации, чтобы при перемещении объекта он не принимал окклюзию, если это не нужно.</li>
+                                        </ul>
+                                        
+                                        <p>HydraAO пока не поддерживает использование текстур. Также как и falloff, вы можете использовать её в бленд материале.</p>
+                                    </div><!--//section-block--> 
+                                    
+                                    
+                                    
                                     <!-- ////////////////////////////////////////////////////////////-->
                                     <!-- //////////////// HydraBack/Envir //////////////-->
                                     <!-- ////////////////////////////////////////////////////////////-->
                                     <div id="HydraBackEnvir" class="section-block">
                                         <h4 class="block-title">HydraBack/Envir</h4>
-                                        <p>HydraBack/Envir - Текст, текст, текст</p>                                        
-                                    </div><!--//section-block-->                                                                 
-                                </div><!--//section-block-->
+                                        
+                                        <p class="text-center"><img class="img-fluid" src="assets/images/Components/HydraBackEnvir_GUI.png" alt="HydraBackEnvir_GUI"></p>              
+                                        
+                                        <p>Текстура использующаяся в энвайронменте и позволяющая загружать разные текстуры в окружение (environment) и задний фон (background). При этом текстура в окружении работает также как и раньше, отражается и является неявным источником света, а текстура на заднем фоне видна только  первичным лучам и нигде не отражается.</p>                                        
+                                        <p>При использовании материала HydraMtlCatcher, текстура из фона проецируется на кетчер и позволяет другим материалам получать корректные отражения как будто от фона.</p>                                        
+                                    </div><!--//section-block--> 
+                                    
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <!-- //////////////// HydraBlendedBox //////////////-->
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <div id="HydraBlendedBox" class="section-block">
+                                        <h4 class="block-title">HydraBlendedBox <span class="badge badge-success">Новое в 2.5</span></h4>
+                                        
+                                        <p class="text-center"><img class="img-fluid" src="assets/images/Components/HydraBlendedBox_GUI.png" alt="HydraBlendedBox_GUI"></p>
+                                        
+                                        <p>Эта карта представляет собой кубическую проекцию текстуры на объект, с плавными переходами между гранями куба, для устранения швов кубической развёртки.</p>                                        
+                                                                
+                                        <ul class="list">
+                                            <li><strong>Blend size</strong> - величина плавности перехода.</li>
+                                            <li><strong>Map scale</strong> - размер текстуры в мировых координатах.</li>           
+                                            <li><strong>Number of projections</strong> - количество проекций текстур. В настоящее время всегда равно 1.</li>
+                                            <li><strong>Texture</strong> - слот для тектуры.</li>                                            
+                                        </ul>
+                                        
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12 col-sm-12">                                            
+                                                <img class="img-fluid" src="assets/images/Components/CubeMap.png" alt="CubeMap"> 
+                                            </div>
+                                             <div class="col-md-6 col-sm-12 col-sm-12">                                            
+                                                <img class="img-fluid" src="assets/images/Components/BlendedBox.png" alt="BlendedBox"> 
+                                            </div>                                      
+                                        </div><!--//row-->
+                                        <p class="text-center">Кубическая развёртка и блендед бокс.</p>
+                                        
+                                        <p>Особенности текущей реализации:</p>
+                                        <ul class="list">
+                                            <li>Текстура располагается в мировых координатах, поэтому она не совпадёт с простой кубической развёрткой, а также при движении объекта текстура останется на месте.</li>
+                                            <li>Временно не поддерживается для рельефа.</li>     
+                                        </ul>
+                                        
+                                    </div><!--//section-block--> 
+                                    
+                                </div><!--//Textures section-block-->
+                                
+                                
+                                
+                                
+                                
+                                
                                 
                                 <!-- ////////////////////////////////////////////////////////////-->
                                 <!-- ////////////////////// Источники света /////////////////////-->
@@ -866,11 +1002,22 @@
                                         <a class="nav-link scrollto" href="#InstallPlug">Установка плагина</a>                                        
                                         <a class="nav-link scrollto" href="#InstallDrivers">Установка драйверов видеокарты</a>                                        
                                     </nav><!--//nav-->
+                                
                                 <a class="nav-link scrollto" href="#HydraIn3dsMax">Hydra в Autodesk 3ds Max</a>
                                     <nav class="doc-sub-menu nav flex-column">
                                         <a class="nav-link scrollto" href="#Materials">Материалы</a>
                                             <nav class="doc-sub2-menu nav flex-column">
                                                 <a class="nav-link scrollto" href="#HydraMtl">HydraMtl</a>
+                                                <nav class="doc-sub3-menu nav flex-column">
+                                                    <a class="nav-link scrollto" href="#Diffuse">Diffuse</a>
+                                                    <a class="nav-link scrollto" href="#Reflectivity">Reflectivity</a>
+                                                    <a class="nav-link scrollto" href="#Transparency">Transparency</a>
+                                                    <a class="nav-link scrollto" href="#OpacitySpecial">OpacitySpecial</a>
+                                                    <a class="nav-link scrollto" href="#Translucency">Translucency</a>
+                                                    <a class="nav-link scrollto" href="#Emission">Emission</a>
+                                                    <a class="nav-link scrollto" href="#Relief">Relief</a>
+                                                </nav>
+                                                    
                                                 <a class="nav-link scrollto" href="#HydraMtlLight">HydraMtlLight</a>
                                                 <a class="nav-link scrollto" href="#HydraMtlCatcher">HydraMtlCatcher</a>
                                                 <a class="nav-link scrollto" href="#DoubleSided">Double Sided</a>
@@ -878,7 +1025,10 @@
                                             </nav>
                                         <a class="nav-link scrollto" href="#Textures">Текстуры</a>
                                             <nav class="doc-sub2-menu nav flex-column">
-                                                <a class="nav-link scrollto" href="#HydraBackEnvir">HydraBack/Envir</a>                                                
+                                                <a class="nav-link scrollto" href="#Falloff">Falloff <span class="badge badge-success">Новое в 2.5</span></a>
+                                                <a class="nav-link scrollto" href="#HydraAO">HydraAO <span class="badge badge-success">Новое в 2.5</span></a>
+                                                <a class="nav-link scrollto" href="#HydraBackEnvir">HydraBack/Envir</a>
+                                                <a class="nav-link scrollto" href="#HydraBlendedBox">HydraBlendedBox <span class="badge badge-success">Новое в 2.5</span></a>
                                             </nav>
                                         <a class="nav-link scrollto" href="#Lights">Источники света</a>
                                         <a class="nav-link scrollto" href="#SetupRend">Настройки рендера и методы расчета освещения (GI)</a>
@@ -886,6 +1036,7 @@
                                         <a class="nav-link scrollto" href="#Tools">Инструменты</a>                                        
                                         <a class="nav-link scrollto" href="#RendElem">Рендер элементы</a> 
                                     </nav><!--//nav-->
+                                
                                 <a class="nav-link scrollto" href="#Develop">Ход разработки</a>
                                     <nav class="doc-sub-menu nav flex-column">
                                         <a class="nav-link scrollto" href="#NextRelise">Появится в следующем релизе</a>
