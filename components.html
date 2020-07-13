@@ -78,6 +78,9 @@
                     <div class="doc-content col-md-9 col-12 order-1">
                         <div class="content-inner">
                         <p>Этот раздел объясняет работу основных компонентов Hydra render.</p>
+                            
+                            
+                            
 							<section id="AboutHydra" class="doc-section">
 								<h2 class="section-title">О Hydra renderer</h2>
 								<img class="img-fluid" src="assets/images/Components/AboutHydraRender.jpg" alt="AboutHydraRender">                                    
@@ -86,6 +89,8 @@
 								разработчики. Движок, АПИ и плагин для 3ds Max распространяются бесплатно и с открытым исходным кодом.</p>
 							</section><!--//doc-section--> 
 							
+                            
+                            
 							<section id="NewFutures" class="doc-section">
 								<h2 class="section-title">Новое в Hydra 2.5</h2>								                                  
 								<h6></h6>
@@ -101,7 +106,9 @@
                                     <li>Поддержка отключения фильтрации текстур (важно для текстур вращения анизотропии).</li>
 									<li>Исправления багов. Полный список в “c:\[Hydra]\Changes.txt”.</li>
         						</ul>
-							</section><!--//doc-section--> 
+							</section><!--//NewFutures doc-section--> 
+                            
+                            
 							
                             <section id="Install" class="doc-section">
                                 <h2 class="section-title">Установка</h2>
@@ -124,7 +131,10 @@
         										<li>Для Nvidia это GTX 460 и выше.</li> 
         										<li>Для AMD это HD 7950 и выше.</li>       										
         									</ul>                                       
-                                    </div><!--//section-block-->
+                                    </div><!--//SysReq section-block-->
+                                    
+                                    
+                                    
                                     <!--////////////////////////////////////////////////////////////-->
                                     <!--///////////////////// Установка плагина ////////////////////-->
                                     <!--////////////////////////////////////////////////////////////-->
@@ -150,7 +160,11 @@
                                                 <p>Решение типичных проблем вы можете посмотреть <a href="faqs.html#InstallAndStart" target="_blank">здесь.</a></p>
                                             </div><!--//content-->
                                         </div><!--//callout-block-->                                    
-                                    </div><!--//section-block-->                                    
+                                    </div><!--//InstallPlug section-block-->         
+                                    
+                                    
+                                    
+                                    
                                     <!--////////////////////////////////////////////////////////////-->
                                     <!--////////////// Установка драйверов видеокарты //////////////-->
                                     <!--////////////////////////////////////////////////////////////-->
@@ -162,9 +176,9 @@
                                         <p>Если видеокарта не видна в списке устройств в настройках рендера, попробуйте устанавливать 
 										драйвера начиная с последнего и уменьшая версию драйвера до тех пор, пока видеокарта не появится
 										в настройках рендера.</p>
-                                    </div><!--//section-block-->
+                                    </div><!--//InstallDrivers section-block-->
                                 </div><!--//section-block-->                                
-                            </section><!--//doc-section-->                            
+                            </section><!--//Install doc-section-->                            
                             
                             
                             
@@ -1006,10 +1020,10 @@
                                     
                                     
                                     <!-- ////////////////////////////////////////////////////////////-->
-                                    <!-- ////////////// Освещение на основе изображения /////////////-->
+                                    <!-- ////////////// Освещение на основе изображений /////////////-->
                                     <!-- ////////////////////////////////////////////////////////////-->
                                     <div id="IBL" class="section-block">
-                                        <h4 class="block-title">Освещение на основе изображения (Image-based lighting)</h4>                                                                                                                        
+                                        <h4 class="block-title">Освещение на основе изображений (Image-based lighting)</h4>                                                                                                                        
                                         <p>Для освещения сцены текстурой, например HDR панорамой, достаточно поместить её в слот Environment map (главная панель Rendering -> Environment, или цифра 8 на клавиатуре).</p>   
                                         
                                         <p>Яркость можно регулировать несколькими способами:</p>
@@ -1024,7 +1038,7 @@
                                         
                                         <p>Освещение на основе изображений обладает высокой реалистичностью, так как вы используете реальные изображения в высоком динамическом диапазоне, либо синтетические текстуры, но близкие к реальным сценам, например текстуры с источниками студийного освещения.</p>
                                         
-                                        <p>Освещать таким образом можно как экстерьеры, например текстурой неба, так и просто предметы интерьера, например текстурами комнаты или со студийными источниками.</p>
+                                        <p>Освещать таким образом можно всё что угодно - экстерьеры и интерьеры, например текстурой неба или просто предметы, например текстурами комнаты или со студийными источниками.</p>
                                         
                                         <div class="row">
                                         <div class="col-md-4 col-sm-4 col-xs-6">                                            
@@ -1047,24 +1061,111 @@
                                         </div>
                                         </div>
                                         
-                                        <p class="text-center">Примеры освещения текстурой. Справа в нижнем углу показана используемая хдр текстура.</p>
-                                        
-                                        
-                                    </div><!--//LightPhotometrics section-block--> 
+                                        <p class="text-center">Примеры освещения текстурой. Справа в нижнем углу показана используемая хдр текстура.</p>      
+                                    </div><!--//IBL section-block--> 
                                     
                                     
+                                    
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <!-- //////////////// HydraSunSky //////////////-->
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <div id="HydraSunSky" class="section-block">
+                                        <h4 class="block-title">HydraSunSky</h4>                                                                                                                        
+                                        <p>Источник света моделирующий солнце и небо. В настоящее время используется всепогодная модель неба Perez.</p>                                 
+                                        
+                                        <ul class="list">
+                                            <li><strong>Soft shadow</strong> - рассеивание тени.</li>
+                                            <li><strong>Position</strong> - позиция солнца на небе. Влияет на цвет.</li>
+                                            <li><strong>Irradiation area</strong> - область света солнца. Также ограничивает бросание лучей от солнца в режимах двунаправленной трассировки - IBPT и MMLT, что положительно сказывается на производительности, т.к. лучи летят только в указанной области.</li>
+                                            <li><strong>Align to sky portals</strong> - подгоняет область света под размеры гидра источников. Удобно подгонять под порталы в окнах, чтобы в режимах IBPT и MMLT лучи летели только в окна.</li>
+                                            <li><strong>Override environment</strong> - Заменяет текстуру в энвайронменте на модель неба.</li>
+                                            <li><strong>Haze</strong> - дымка.</li>                                                                            
+                                        </ul>
+                                    </div><!--//HydraSunSky section-block-->
+                                    
+                                    
+                                    
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <!-- //////////////// Источники света сторонних рендеров //////////////-->
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <div id="LightOtherRenders" class="section-block">
+                                        <h4 class="block-title">Источники света сторонних рендеров</h4>                                                                                                                        
+                                        <p>На прямую не поддерживаются, но есть возможность конвертирования в совместимые с гидрой источники. Скрипт конвертер источников света рендеров V-Ray и Corona находится в свитке <a href="components.html#Tools" target="_blank">Tools.</a></p>                                                                                
+                                    </div><!--//LightOtherRenders section-block-->
                                 </div><!--//Lights section-block-->
                                 
                                 
                                 
+                                
+                                
+                                
+                                
                                 <!-- ////////////////////////////////////////////////////////////-->
-                                <!-- /////// Настройки рендера и методы расчета освещения ///////-->
+                                <!-- /////// Настройки рендера ///////-->
                                 <!-- ////////////////////////////////////////////////////////////-->
                                 <div id="SetupRend" class="section-block">
-                                    <h3 class="block-title">Настройки рендера и методы расчета освещения</h3>
-                                    <p>текст текст текст.</p>                                    
+                                    <h3 class="block-title">Настройки рендера</h3>
+                                    <p>В настройки рендера можно зайти выбрав в главном меню Rendering -> Render setup, или нажав F10 на клавиатуре. Далее нужно выбрать “Hydra renderer” в списке доступных движков визуализации, для дальнейшей работы с ним.</p>                                 
+                                    
+                                    <p class="text-center"><img class="img-fluid" src="assets/images/Components/RenderChoice.png" alt="RenderChoice"></p>
+                                    
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <!-- //////////////// Rendering quality //////////////-->
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <div id="RenderingQuality" class="section-block">
+                                        <h4 class="block-title">Rendering quality</h4>
+                                                                                                                        
+                                        <p>Это настройка качества или правильнее будет сказать точности изображения. Чем выше настройки, тем точнее результат и как следствие меньше шума. В данный момент движок не поддерживает адаптивный сэмплинг, поэтому количество семплов одинаковое для всего изображения.</p>               
+                                        
+                                        <p class="text-center"><img class="img-fluid" src="assets/images/Components/RenderingQuality_GUI.png" alt="RenderingQuality_GUI"></p>                         
+                                        <ul class="list">
+                                            <li><strong>Samples per pixel</strong> - количество семплов/лучей на 1 пиксель.</li>
+                                            <li><strong>Limit render time (min)</strong> - ограничение времени рендера в минутах. Рендер может закончиться раньше указанного времени, если будет просчитано указанное количество семплов из предыдущего пункта.</li>           
+                                            <li><strong>Ray bounce</strong> - количество переотражений или путей лучей. Подробнее:</li>         
+                                        
+                                            <div class="row">
+                                                <div class="col-md-6 col-12">                                            
+                                                    <p class="text-center"><img class="img-fluid" src="assets/images/Components/RayBounce-0.png" alt="RayBounce-0"></p>
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                    <p>Ray bounce 0 - нет путей, всё чёрное.</p>
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                    <p class="text-center"><img class="img-fluid" src="assets/images/Components/RayBounce-1.png" alt="RayBounce-1"></p>        
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                    <p>Ray bounce 1 - луч попадает в объект и не переотражается, поэтому будут видны только самосветящиеся объекты, источники света и энвайронмент.</p>
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                    <p class="text-center"><img class="img-fluid" src="assets/images/Components/RayBounce-2.png" alt="RayBounce-2"></p>        
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                    <p>Ray bounce 2 - луч попадает в объект и переотражается. Появился свет от источников, тени, отражения. Преломления в шаре нет, т.к. луч проходит внутрь, но попадает в заднюю стенку.</p>
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                    <p class="text-center"><img class="img-fluid" src="assets/images/Components/RayBounce-3.png" alt="RayBounce-3"></p>        
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                    <p>Ray bounce 3 - добавилось преломление энвайронмента. Путь: луч попадает в поверхность шара, проходит внутрь и попадает в заднюю стенку, выходит и попадает в энвайронмент и пол. Но значение энвайронмента в этот момент известно, поэтому мы его видим в преломлении, а значение пола нет, ему надо ещё один баунс, чтобы получить яркость от любого источника.</p>
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                    <p class="text-center"><img class="img-fluid" src="assets/images/Components/RayBounce-4.png" alt="RayBounce-4"></p>        
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                    <p>Ray bounce 4 - добавился пол. Путь: 1 - поверхность, 2 - задняя стенка, 3 - энвайронмент и пол, - 4 от пола в источник. Для появления каустики понадобилось увеличить Diff. bounce до 1.</p>
+                                                </div>
+                                            </div>     
+
+                                            <p>Для стёкол можно рассчитать простую формулу Ray bounce = 2 + кол-во стенок у преломляющего объекта. Для плафона с толщиной стенок нужно ставить 2 + 4 преломления для стенок = 6. Для 2х перекрывающихся плафонов, 2 + 4 + 4 = 8.</p>
+                                        
+                                            <li><strong>Diff. bounce</strong> - количество диффузных переотражений. Чем ярче источники света, тем заметнее их влияние на следующих этапах переотражения, но разница эта не большая, а при увеличении этого параметра время рендера будет увеличиваться, поэтому рекомендуется какое-то компромиссное решение.</li> 
+                                        </ul>
+                                    </div><!--//RenderingQuality section-block--> 
+                                    
+                                    
                                 </div><!--//SetupRend section-block-->
 
+                                
                                 
                                 
                                 <!-- ////////////////////////////////////////////////////////////-->
@@ -1077,6 +1178,7 @@
 
                                 
                                 
+                                
                                 <!-- ////////////////////////////////////////////////////////////-->
                                 <!-- ////////////////////// Инструменты /////////////////////-->
                                 <!-- ////////////////////////////////////////////////////////////-->
@@ -1085,6 +1187,7 @@
                                     <p>текст текст текст.</p>                                    
                                 </div><!--//Tools section-block-->
 
+                                
                                 
                                 
                                 <!-- ////////////////////////////////////////////////////////////-->
@@ -1097,6 +1200,7 @@
 
                             </section><!--//doc-section-->
 
+                            
                             
                             
                             <section id="Develop" class="doc-section">
@@ -1177,7 +1281,15 @@
                                                 <a class="nav-link scrollto" href="#HydraBlendedBox">HydraBlendedBox <span class="badge badge-success">Новое в 2.5</span></a>
                                             </nav>
                                         <a class="nav-link scrollto" href="#Lights">Источники света</a>
-                                        <a class="nav-link scrollto" href="#SetupRend">Настройки рендера и методы расчета освещения (GI)</a>
+                                            <nav class="doc-sub2-menu nav flex-column">
+                                                <a class="nav-link scrollto" href="#LightStandard">Standard</a>
+                                                <a class="nav-link scrollto" href="#LightPhotometrics">Photometrics</a>
+                                                <a class="nav-link scrollto" href="#Hydralight">Hydra light</a>
+                                                <a class="nav-link scrollto" href="#IBL">Освещение на основе изображений</a>
+                                                <a class="nav-link scrollto" href="#HydraSunSky">HydraSunSky</a>
+                                                <a class="nav-link scrollto" href="#LightOtherRenders">Источники света сторонних рендеров</a>
+                                            </nav>
+                                        <a class="nav-link scrollto" href="#SetupRend">Настройки рендера</a>
                                         <a class="nav-link scrollto" href="#PostProc">Пост процесс</a>
                                         <a class="nav-link scrollto" href="#Tools">Инструменты</a>                                        
                                         <a class="nav-link scrollto" href="#RendElem">Рендер элементы</a> 
