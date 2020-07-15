@@ -1163,6 +1163,105 @@
                                     </div><!--//RenderingQuality section-block--> 
                                     
                                     
+                                    
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <!-- //////////////// Engine //////////////-->
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <div id="Engine" class="section-block">
+                                        <h4 class="block-title">Engine</h4>  
+                                        <p class="text-center"><img class="img-fluid" src="assets/images/Components/Engine_GUI.png" alt="Engine_GUI"></p>                         
+                                        <p>В Hydra Renderer используются следующие алгоритмы для вычислений всех световых взаимодействий (Global illumination):</p>
+                                        
+                                        <ul class="list">
+                                            <li><strong>Path Tracing</strong> - трассировка путей. Рекомендуется использовать в сценах с простым равномерным вторичным освещением, когда сцена освещена в основном источником света или энвайронментом, например интерьеры с большим окном или дневные экстерьеры. В настоящее время единственный из всех перечисленных, который поддерживает выпрямление перспективных искажений камеры Tilt correction.</li>
+                                            <li><strong>Light Tracing</strong> - трассировка путей от источника света. Хорошо справляется со сложным освещением, например источник света в плафоне, где большая часть света закрыта им. Так же, пожалуй это самая лучшая стратегия для каустики. Но этот метод плохо сэмплит отражения, т.к. крайне мала вероятность попадания лучей в камеру, и не сэмплит самосветящиеся объекты, поэтому в чистом виде практически мало пригоден для комплексных сцен. Это переходное звено к IBPT и выкладывается для тестов.</li>           
+                                            <li><strong>IBPT</strong> (Instant bidirectional path tracing) - смесь PT и Light Tracing. Берет лучшее из двух стратегий. Хорошо справляется со сложным освещением, где доминирует вторичное освещение или каустика, когда источники закрыты плафонами, шторами и т.д.</li> 
+                                            <li><strong>MMLT</strong> (Multiplexed metropolis light transport) -  один из самых сложных и эффективных адаптивных алгоритмов, сочетающий достоинства всех вышеперечисленных. Имеет преимущество только в сценах со сложным освещением и каустикой (лампы в плафонах, окна закрытые шторами и т.д.). В некоторых ситуациях справляется лучше, в некоторых хуже. Здесь всё зависит от конкретной сцены.</li>
+                                        </ul>
+                                        
+                                        <p>Дополнительные настройки:</p>
+                                        <ul class="list">
+                                            <li><strong>Caustics</strong> - включает прохождение света от источника, через материалы с ненулевым параметром Transparency.</li>
+                                            <li><strong>Fast background</strong> - режим ускоряющий просчёт в сценах с большими участками без геометрии, например автомобиль или здание на фоне энвайронмента. В сложной сцене вы можете долго не увидеть первый пасс, т.к. обходятся все пиксели изображения с 256 семплами на пиксель. В обычном режиме за пасс обходятся не все пиксели и с меньшим кол-вом семплов, поэтому результат виден быстрее. В данном режиме не работает QMC.</li>           
+                                            <li><strong>Auto texture resize</strong> - автоматическое уменьшение разрешения текстур, в зависимости от их расположения в сцене и разрешения рендера, позволяющее сильно сэкономить память.</li>                                             
+                                        </ul>
+                                        
+                                        <p>Если у вас не большая сцена, с текстурами небольшого размера, консоль рендера не выдает предупреждений о нехватке памяти и на рендере присутствуют все текстуры, то опцию “Auto texture resize” можно не включать, т.к. этот алгоритм каждый рендер будет заново проверять сцену и масштабировать текстуры, что не очень быстро.</p>                                        
+                                    </div><!--//Engine section-block--> 
+                                    
+                                    
+                                    
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <!-- //////////////// Camera //////////////-->
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <div id="Camera" class="section-block">
+                                        <h4 class="block-title">Camera</h4>  
+                                        <p class="text-center"><img class="img-fluid" src="assets/images/Components/Camera_GUI.png" alt="Camera_GUI"></p>               
+                                                                            
+                                        <ul class="list">
+                                            <li><strong>Enable DOF</strong> - включение размытия по глубине. Используется честное семплирование на сферической линзе.</li>
+                                            <li><strong>Defocus</strong> - параметр задающий силу размытия. Камера всегда сфокусирована на своём target и имеет самое резкое изображение в этом месте.</li>
+                                                                                
+                                            <p>В настоящее время DOF в режимах Light tracing, IBPT и MMLT имеет небольшие артефакты в виде ореолов вокруг объектов.</p>
+                                                                                
+                                            <li><strong>Motion blur.</strong> Размытие движения пока не поддерживается на уровне движка, но вы можете это сделать используя эту опцию в стандартной камере, когда картинка складывается из нескольких, просчитанных подряд под-кадров. Количество семплов на пиксель можно уменьшить пропорционально количеству подкадров. В сумме они дадут примерно тоже качество, как для одного кадра с большим количеством семплов.                                            
+                                            <p class="text-center"><img class="img-fluid" src="assets/images/Components/MotionBlur_GUI.png" alt="MotionBlur_GUI"></p>               
+                                            </li>                                
+                                        </ul>                                                                                
+                                    </div><!--//Camera section-block--> 
+                                    
+                                    
+                                    
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <!-- //////////////// Device list //////////////-->
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <div id="Devicelist" class="section-block">
+                                        <h4 class="block-title">Device list</h4>  
+                                        <p class="text-center"><img class="img-fluid" src="assets/images/Components/DeviceList_GUI.png" alt="DeviceList_GUI"></p>       <p>Список доступных устройств для рендера.</p>        
+                                                                            
+                                        <ul class="list">
+                                            <li><strong>Remember device choice.</strong> После выбора устройств, нажмите эту галку. Ваш выбор сохранится в файл и оттуда будет браться для рендера.</li>
+                                        </ul>          
+                                        
+                                        <p>Мы не рекомендуем использовать процессор вместе с видеокартой, потому что прирост от процессора очень маленький, а общая нагрузка на систему большая. Иногда это может даже привести к более медленному рендеру, чем только видеокарта, т.к. процессор также используется во время рендера для передачи данных в видеокарту и обратно.</p>
+                                    </div><!--//Devicelist section-block--> 
+                                    
+                                    
+                                    
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <!-- //////////////// Path tracing //////////////-->
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <div id="PathTracing" class="section-block">
+                                        <h4 class="block-title">Path tracing</h4>  
+                                        <p class="text-center"><img class="img-fluid" src="assets/images/Components/PathTracing_GUI.png" alt="PathTracing_GUI"></p>     
+                                                                            
+                                        <ul class="list">
+                                            <li><strong>QMC lights</strong> - сэмплинг источников света и теней методом квази монте карло.</li>
+                                            <li><strong>QMC materials</strong> - сэмплинг материалов методом квази монте карло.</li>
+                                        
+                                            <p>Методы QMC это путь в сторону де рандомизации. Они имеют более равномерное распределение в пространстве, чем обычные случайные числа (рандомные числа), ускоряя просчёт. Но из-за этого местами может проявляться некоторая периодичность в виде лесенок, шашечек и других визуально нежелательных структур. Их появление предсказать очень сложно, т.к. оно зависит от большого числа переменных: ракурс, источники света, материалы и их взаимное расположение в пространстве и так далее. Как правило, если во время просчёта эти структуры слишком медленно пропадают, то скорее всего они не исчезнут за приемлемое время и эту настройку лучше отключить для этого кадра. Также, если вы рендерите очень долго, а шум в некоторых местах всё равно остался, попробуйте отключить эти опции.</p>
+                                            
+                                            <li><strong>Env. clamp</strong> - максимальное значение яркости энвайронмента. Временно недоступно.</li>
+                                            <li><strong>BSDF clamp </strong><span class="badge badge-success">Новое в 2.5</span> - максимальное значения яркости отражённых лучей от материалов. Параметр был временно недоступен и возвращен в несколько переработанном виде.</li>
+                                            
+                                            <p>Оба вида клампа используются для борьбы с ярким точечным шумом. Чем меньше значение, тем меньше точечного шума.</p>
+                                        </ul>          
+                                    </div><!--//PathTracing section-block--> 
+                                    
+                                    
+                                    
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <!-- //////////////// Override //////////////-->
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <div id="Override" class="section-block">
+                                        <h4 class="block-title">Override</h4>  
+                                                                                                                    
+                                        <ul class="list">
+                                            <li><strong>Gray materials</strong> - заменяет во время рендера все материалы, кроме имеющих не нулевое Transparency, например стёкла, на серый материал с цветом RGB(128, 128, 128), для оценки и настройки освещения.</li>
+                                            <li><strong>Environment Multiplier</strong> - изменяет яркость энвайронмента.</li>
+                                        </ul>          
+                                    </div><!--//Override section-block--> 
+                                    
                                 </div><!--//SetupRend section-block-->
 
                                 
@@ -1172,8 +1271,46 @@
                                 <!-- ////////////////////// Пост процесс /////////////////////-->
                                 <!-- ////////////////////////////////////////////////////////////-->
                                 <div id="PostProc" class="section-block">
-                                    <h3 class="block-title">Пост процесс</h3>
-                                    <p>текст текст текст.</p>                                    
+                                    <h3 class="block-title">Post processing</h3>
+                                    <p>Пост процесс это 2д обработка изображения после рендеринга.</p>                                    
+                                    
+                                    
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <!-- //////////////// Denoising //////////////-->
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <div id="Denoising" class="section-block">
+                                        <h4 class="block-title">Denoising</h4>  
+                                                                                                                    
+                                        <p>В настоящее время деноизинг не доступен и находится на переработке.</p>          
+                                    </div><!--//Denoising section-block-->
+                                    
+                                    
+                                    
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <!-- //////////////// Common corrections //////////////-->
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <div id="CommonCorrections" class="section-block">
+                                        <h4 class="block-title">Common corrections</h4>  
+                                                       
+                                        <p class="text-center"><img class="img-fluid" src="assets/images/Components/PP_Common_GUI.png" alt="PP_Common_GUI"></p>     
+                                        
+                                        <ul class="list">
+                                            <li><strong>Exposure</strong> - яркость изображения, экспозиция.</li>
+                                            <li><strong>Compress</strong> - сжатие высокого динамического диапазона (hdr) в низкий динамический диапазон (ldr), для полного охвата цветов монитором. Моделируются некоторые свойства человеческого зрения.</li>
+                                            <li><strong>Contrast</strong> - увеличение разницы между яркими и тёмными тонами изображения.</li>
+                                            <li><strong>Saturation</strong> - изменение насыщенности цвета.</li>
+                                            <li><strong>White balance</strong> - автоматическая коррекция тональности изображения. Моделируются биологические механизмы цветопостоянства, по стандарту CIECAM02. Имеется возможность ручного выбора точки белого во фреймбуфере. Чёрный цвет включает автоматическое определение точки белого, что не всегда корректно работает.</li>
+                                            <li><strong>Uniform contrast</strong> - нелинейное перераспределение яркости, для достижения равномерного контраста изображения. В изображениях с сильными разрывами в яркости, может приводить к заметным искажениям.</li>                     
+                                            
+                                            <p class="text-center"><img class="img-fluid" src="assets/images/Components/UniformContrast.png" alt="UniformContrast"></p>
+                                            <p class="text-center">Слева оригинал, справа с фильтром uniform contrast</p>
+                                            
+                                            <li><strong>Normalize</strong> - линейное растягивание диапазона яркостей с отсечкой точечных выбросов, для увеличения контраста изображения. В большинстве случаев рекомендуется ставить на максимум, чтобы заполнить весь LDR диапазон.</li>
+                                            <li><strong>Sharpness</strong> - увеличение резкости изображения.</li>
+                                        </ul>           
+                                    </div><!--//Common corrections section-block-->
+                                    
+                                    
                                 </div><!--//PostProc section-block-->
 
                                 
@@ -1183,7 +1320,7 @@
                                 <!-- ////////////////////// Инструменты /////////////////////-->
                                 <!-- ////////////////////////////////////////////////////////////-->
                                 <div id="Tools" class="section-block">
-                                    <h3 class="block-title">Инструменты</h3>
+                                    <h3 class="block-title">Tools</h3>
                                     <p>текст текст текст.</p>                                    
                                 </div><!--//Tools section-block-->
 
@@ -1194,7 +1331,7 @@
                                 <!-- ////////////////////// Рендер элементы /////////////////////-->
                                 <!-- ////////////////////////////////////////////////////////////-->
                                 <div id="RendElem" class="section-block">
-                                    <h3 class="block-title">Рендер элементы</h3>
+                                    <h3 class="block-title">Render elements</h3>
                                     <p>текст текст текст.</p>                                    
                                 </div><!--//RendElem section-block-->
 
@@ -1242,8 +1379,8 @@
 					<!-- ////////////////////////////////////////////////////////////-->
 
                     <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
-                        <div id="doc-nav" class="doc-nav">
-                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                        <div id="doc-nav" class="doc-nav">                                                        
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">  
 								<a class="nav-link scrollto" href="#AboutHydra">О Hydra renderer</a>
 								<a class="nav-link scrollto" href="#NewFutures">Новое в версии 2.5</a>
                                 <a class="nav-link scrollto" href="#Install">Установка</a>
@@ -1290,9 +1427,28 @@
                                                 <a class="nav-link scrollto" href="#LightOtherRenders">Источники света сторонних рендеров</a>
                                             </nav>
                                         <a class="nav-link scrollto" href="#SetupRend">Настройки рендера</a>
-                                        <a class="nav-link scrollto" href="#PostProc">Пост процесс</a>
-                                        <a class="nav-link scrollto" href="#Tools">Инструменты</a>                                        
-                                        <a class="nav-link scrollto" href="#RendElem">Рендер элементы</a> 
+                                            <nav class="doc-sub2-menu nav flex-column">
+                                                <a class="nav-link scrollto" href="#RenderingQuality">Rendering Quality</a>
+                                                <a class="nav-link scrollto" href="#Engine">Engine</a>
+                                                <a class="nav-link scrollto" href="#Camera">Camera</a>
+                                                <a class="nav-link scrollto" href="#Devicelist">Device list</a>
+                                                <a class="nav-link scrollto" href="#PathTracing">Path Tracing</a>
+                                                <a class="nav-link scrollto" href="#Override">Override</a>                                                
+                                            </nav>
+                                        
+                                        <a class="nav-link scrollto" href="#PostProc">Post processing</a>
+                                        <nav class="doc-sub2-menu nav flex-column">
+                                                <a class="nav-link scrollto" href="#Denoising">Denoising</a>
+                                                <a class="nav-link scrollto" href="#CommonCorrections">Common corrections</a>
+                                                <a class="nav-link scrollto" href="#OpticsEffects">Optics effects</a>                                                
+                                            </nav>
+                                        
+                                        <a class="nav-link scrollto" href="#Tools">Tools</a>                                        
+                                        <nav class="doc-sub2-menu nav flex-column">
+                                                <a class="nav-link scrollto" href="#Debug">Debug</a>
+                                                <a class="nav-link scrollto" href="#Engine">Engine</a>                                                
+                                            </nav>
+                                        <a class="nav-link scrollto" href="#RendElem">Render elements</a> 
                                     </nav><!--//nav-->
                                 
                                 <a class="nav-link scrollto" href="#Develop">Ход разработки</a>
