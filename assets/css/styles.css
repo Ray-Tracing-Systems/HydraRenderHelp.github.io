@@ -910,9 +910,9 @@ select {
 }
 
 .doc-menu .nav-link {
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   display: block;
-  padding: 5px 15px;
+  padding: 3px 15px;
   color: #616670;
 }
 
@@ -964,7 +964,7 @@ select {
 }
 
 .doc-sub-menu .nav-link {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-size: 13px;
   display: block;
   color: #616670;
@@ -998,7 +998,7 @@ select {
 }
 
 .doc-sub2-menu .nav-link {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-size: 12px;
   display: block;
   color: #616670;
@@ -1008,7 +1008,7 @@ select {
 }
 
 .doc-sub2-menu .nav-link:first-child {
-  padding-top: 5px;
+  padding-top: 0;
 }
 
 .doc-sub2-menu .nav-link:hover {
@@ -1032,7 +1032,7 @@ select {
 }
 
 .doc-sub3-menu .nav-link {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-size: 11px;
   display: block;
   color: #616670;

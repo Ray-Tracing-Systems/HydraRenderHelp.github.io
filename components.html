@@ -72,7 +72,7 @@
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title"><span aria-hidden="true" class="icon icon_puzzle_alt"></span> Компоненты</h1>
-                    <div class="meta"><i class="far fa-clock"></i> Последнее изменение: 10 июля 2020</div>
+                    <div class="meta"><i class="far fa-clock"></i> Последнее изменение: 15 июля 2020</div>
                 </div><!--//doc-header-->
                 <div class="doc-body row" >
                     <div class="doc-content col-md-9 col-12 order-1">
@@ -1331,7 +1331,7 @@
                                                 <h4 class="callout-title">Заметка:</h4>
                                                 <p>В реальной фотографии с эффектами хроматической аберрацией (Chromatic aberration) и виньетирования (Vignette) как правило борются, т.к. они по праву считаются побочными эффектами несовершенной конструкции оптики и фотоэлементов. Но в мире стерильных синтетических изображений (рендерах) этот эффект придает некоторое сходство с реальной фотографией, что несколько компенсирует недостаток реалистичности, если таковой имеется на изображении. Также они могут использоваться как художественный приём.</p>
                                             </div><!--//content-->
-                                        </div>
+                                            </div>
                                             
                                             <li><strong>Diffraction stars.</strong> Настройки дифракционных звёзд.</li>
                                             <li><strong>Size</strong> - размер звезды. Пропорционален разрешению рендера, поэтому настроив для одного разрешения, размер пропорционально изменится и для другого.</li>
@@ -1355,7 +1355,31 @@
                                 <!-- ////////////////////////////////////////////////////////////-->
                                 <div id="Tools" class="section-block">
                                     <h3 class="block-title">Tools</h3>
-                                    <p>текст текст текст.</p>                                    
+                                    <p>Набор дополнительных инструментов и скриптов.</p>     
+                                    
+                                    <ul class="list">
+                                            <li><strong>Convert to Hydra</strong> - скрипт конвертирующий материалы и источники света из других рендеров в Гидру.</li>
+                                            <li><strong>Convert from Hydra</strong> - скрипт конвертирующий материалы и источники света Гидры в другие рендеры.</li>
+                                            <p></p>
+                                            <p class="text-center"><img class="img-fluid" src="assets/images/Components/ScriptConvert_GUI.png" alt="ScriptConvert_GUI"></p>
+                                            <p></p>
+                                            <li><strong>Override param. all HydraMtl</strong> - скрипт изменяющий некоторые параметры всех материалов HydraMtl в сцене.</li>                                            
+                                        </ul>  
+                                    
+                                    
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <!-- //////////////// Debug //////////////-->
+                                    <!-- ////////////////////////////////////////////////////////////-->
+                                    <div id="Debug" class="section-block">
+                                        <h4 class="block-title">Debug</h4>  
+                                                       
+                                        <p>Этот свиток содержит некоторые настройки нужные для разработки.</p>                                             
+                                        
+                                        <ul class="list">
+                                            <li><strong>Log to file</strong> - сохраняет сообщения плагина и рендера в “С:\[Hydra]\logs\”.</li>
+                                            <li><strong>Save image (initial interval)</strong> - сохраняет рендер в “С:\[Hydra]\rendered_images\”, начиная с указанного времени и далее удваивая время. Например: 5, 10, 20, 40 и т.д.</li>                             
+                                        </ul> 
+                                    </div><!--//Debug section-block-->
                                 </div><!--//Tools section-block-->
 
                                 
@@ -1366,10 +1390,17 @@
                                 <!-- ////////////////////////////////////////////////////////////-->
                                 <div id="RendElem" class="section-block">
                                     <h3 class="block-title">Render elements</h3>
-                                    <p>текст текст текст.</p>                                    
+                                    <p class="text-center"><img class="img-fluid" src="assets/images/Components/RenderElements_GUI.png" alt="RenderElements_GUI"></p>
+                                    <p>Рендер элементы - это некоторые дополнительные изображения, пассы, рассчитывающиеся во время рендера, которые могут помочь в дополнительной обработке визуализированного изображения, при использовании специализированного программного обеспечения предназначенного для этого.</p> 
+                                    
+                                    <ul class="list">
+                                        <li><strong>Alpha (add 4 channel)</strong> - добавляет 4 канал в изображение рендера, в котором непрозрачные объекты белого цвета, фон черного. Полупрозрачные объекты имеют серый цвет пропорциональный их прозрачности.</li>      
+                                    </ul>
+                                    
+                                    <p>Остальные рендер элементы сохраняются только при включенной опции сохранения изображения на главной вкладке настроек рендера. </p>
+                                    <p class="text-center"><img class="img-fluid" src="assets/images/Components/SaveFile_GUI.png" alt="SaveFile_GUI"></p>    
                                 </div><!--//RendElem section-block-->
-
-                            </section><!--//doc-section-->
+                            </section><!--//HydraIn3dsMax doc-section-->
 
                             
                             
@@ -1381,8 +1412,12 @@
                                 <!-- ///////////////// Появится в следующем релизе //////////////-->
                                 <!-- ////////////////////////////////////////////////////////////-->
                                 <div id="NextRelise" class="section-block">
-                                    <h3 class="block-title">Появится в следующем релизе</h3>
-                                    <p>текст текст текст.</p>                                    
+                                    <h3 class="block-title">Появится в следующем релизе 2.6</h3>
+                                    
+                                    <ul class="list">
+                                        <li>...</li>
+                                        <li>...</li>
+                                    </ul>                                    
                                 </div><!--//NextRelise section-block-->
 
                                 <!-- ////////////////////////////////////////////////////////////-->
@@ -1390,7 +1425,11 @@
                                 <!-- ////////////////////////////////////////////////////////////-->
                                 <div id="InDevelop" class="section-block">
                                     <h3 class="block-title">В разработке</h3>
-                                    <p>текст текст текст.</p>                                    
+                                    <ul class="list">
+                                        <li>Перенос документации на отдельный сайт.</li>
+                                        <li>Переход на Vulkan API, для поддержка аппаратного рейтрейсинга в NVidia RTX.</li>
+                                        <li>Исправление багов.</li>
+                                    </ul>
                                 </div><!--//InDevelop section-block-->
 
                                 <!-- ////////////////////////////////////////////////////////////-->
@@ -1398,7 +1437,14 @@
                                 <!-- ////////////////////////////////////////////////////////////-->
                                 <div id="InPlane" class="section-block">
                                     <h3 class="block-title">В планах</h3>
-                                    <p>текст текст текст.</p>                                    
+                                    
+                                    <ul class="list">
+                                        <li>Вложенность процедурных текстур (falloff, blend box, AO) друг в друга.</li>
+                                        <li>Денойзер.</li>
+                                        <li>Active shade.</li>
+                                        <li>Region render.</li>
+                                        <li>И другое.</li>
+                                    </ul>
                                 </div><!--//InPlane section-block-->
 
                             </section><!--//Develop doc-section-->
@@ -1471,17 +1517,17 @@
                                             </nav>
                                         
                                         <a class="nav-link scrollto" href="#PostProc">Post processing</a>
-                                        <nav class="doc-sub2-menu nav flex-column">
+                                            <nav class="doc-sub2-menu nav flex-column">
                                                 <a class="nav-link scrollto" href="#Denoising">Denoising</a>
                                                 <a class="nav-link scrollto" href="#CommonCorrections">Common corrections</a>
                                                 <a class="nav-link scrollto" href="#OpticsEffects">Optics effects</a>                                                
                                             </nav>
                                         
                                         <a class="nav-link scrollto" href="#Tools">Tools</a>                                        
-                                        <nav class="doc-sub2-menu nav flex-column">
-                                                <a class="nav-link scrollto" href="#Debug">Debug</a>
-                                                <a class="nav-link scrollto" href="#Engine">Engine</a>                                                
+                                            <nav class="doc-sub2-menu nav flex-column">
+                                                <a class="nav-link scrollto" href="#Debug">Debug</a>                    
                                             </nav>
+                                        
                                         <a class="nav-link scrollto" href="#RendElem">Render elements</a> 
                                     </nav><!--//nav-->
                                 
