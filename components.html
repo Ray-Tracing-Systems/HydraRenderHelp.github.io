@@ -109,79 +109,6 @@
 							</section><!--//NewFutures doc-section--> 
                             
                             
-							
-                            <section id="Install" class="doc-section">
-                                <h2 class="section-title">Установка</h2>
-                                <div class="section-block">                                    
-                                    <!--////////////////////////////////////////////////////////////-->
-                                    <!--/////////////////// Системные требования ///////////////////-->
-                                    <!--////////////////////////////////////////////////////////////-->
-                                    <div id="SysReq" class="section-block">
-                                        <h3 class="block-title">Системные требования</h3>                                                                              
-                                            <h6>Минимальные:</h6>
-                                            <ul class="list">
-        										<li>ОС Windows x64.</li>        										        										
-        									</ul>
-        								<p>Начиная с версии 2.1с  наш рендер может использовать центральный процессор для расчётов, при наличии 
-										OpenCL совместимого процессора и драйвера для него. Поэтому других минимальных системных требований нет.
-										Однако, <strong>Hydra Renderer был и остаётся GPU ориентированной рендер-системой,</strong> поэтому 
-										обратите внимание на рекомендуемые системные требования.</p>
-                                            <h6>Рекомендуемые:</h6>
-                                            <ul class="list">
-        										<li>Для Nvidia это GTX 460 и выше.</li> 
-        										<li>Для AMD это HD 7950 и выше.</li>       										
-        									</ul>                                       
-                                    </div><!--//SysReq section-block-->
-                                    
-                                    
-                                    
-                                    <!--////////////////////////////////////////////////////////////-->
-                                    <!--///////////////////// Установка плагина ////////////////////-->
-                                    <!--////////////////////////////////////////////////////////////-->
-                                    <div id="InstallPlug" class="section-block">
-                                        <h3 class="block-title">Установка плагина</h3>                                          
-                                        <h6>Autodesk 3ds Max:</h6>
-                                        <ol class="list">
-        							        <li>Скачайте плагин рендера с <a href="http://www.raytracing.ru/download.html" target="_blank">сайта</a>
-											или из <a href="https://github.com/Ray-Tracing-Systems/HydraMaxBinary" target="_blank">гитхаба</a> и 
-											установите его.</li>        										        										
-        									<li>После запуска 3ds Max, нужно нажать Render Settings или F10. В окне Assign Renderer выбрать 
-											Hydra Renderer.</li>        										
-        									<li>Желательно после этого открыть настройки самого рендера и убедиться что он видит нужное устройство.
-											После этого попробовать рендер в обычном окне на простой сцене.</li>        										
-        								</ol>        								
-                                                                                    
-                                        <div class="callout-block callout-danger">
-                                            <div class="icon-holder">
-                                                <i class="fas fa-exclamation-triangle"></i>
-                                            </div><!--//icon-holder-->
-                                            <div class="content">
-                                                <h4 class="callout-title">Типичные проблемы с установкой и запуском рендера</h4>
-                                                <p>Решение типичных проблем вы можете посмотреть <a href="faqs.html#InstallAndStart" target="_blank">здесь.</a></p>
-                                            </div><!--//content-->
-                                        </div><!--//callout-block-->                                    
-                                    </div><!--//InstallPlug section-block-->         
-                                    
-                                    
-                                    
-                                    
-                                    <!--////////////////////////////////////////////////////////////-->
-                                    <!--////////////// Установка драйверов видеокарты //////////////-->
-                                    <!--////////////////////////////////////////////////////////////-->
-                                    <div id="InstallDrivers" class="section-block">
-                                        <h3 class="block-title">Установка драйверов видеокарты</h3>                                        
-                                        <p>Установите последние драйвера для вашей видеокарты с сайта референсных видеокарт 
-										<a href="https://www.nvidia.ru/Download/index.aspx?lang=ru" target="_blank">NVIDIA</a> или 
-										<a href="https://www.amd.com/ru/support" target="_blank">AMD</a>.</p>                                                             
-                                        <p>Если видеокарта не видна в списке устройств в настройках рендера, попробуйте устанавливать 
-										драйвера начиная с последнего и уменьшая версию драйвера до тех пор, пока видеокарта не появится
-										в настройках рендера.</p>
-                                    </div><!--//InstallDrivers section-block-->
-                                </div><!--//section-block-->                                
-                            </section><!--//Install doc-section-->                            
-                            
-                            
-                            
                             
                             <section id="HydraIn3dsMax" class="doc-section">
                                 <h2 class="section-title">Hydra в Autodesk 3ds Max</h2>
@@ -1462,14 +1389,7 @@
                         <div id="doc-nav" class="doc-nav">                                                        
                             <nav id="doc-menu" class="nav doc-menu flex-column sticky">  
 								<a class="nav-link scrollto" href="#AboutHydra">О Hydra renderer</a>
-								<a class="nav-link scrollto" href="#NewFutures">Новое в версии 2.5</a>
-                                <a class="nav-link scrollto" href="#Install">Установка</a>
-                                    <nav class="doc-sub-menu nav flex-column">                                        
-                                        <a class="nav-link scrollto" href="#SysReq">Системные требования</a>
-                                        <a class="nav-link scrollto" href="#InstallPlug">Установка плагина</a>                                        
-                                        <a class="nav-link scrollto" href="#InstallDrivers">Установка драйверов видеокарты</a>                                        
-                                    </nav><!--//nav-->
-                                
+								<a class="nav-link scrollto" href="#NewFutures">Новое в версии 2.5</a>                                
                                 <a class="nav-link scrollto" href="#HydraIn3dsMax">Hydra в Autodesk 3ds Max</a>
                                     <nav class="doc-sub-menu nav flex-column">
                                         <a class="nav-link scrollto" href="#Materials">Материалы</a>
