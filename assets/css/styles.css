@@ -888,7 +888,7 @@ select {
 }
 
 /* Sidebar */
-.doc-nav {
+.doc-nav {    
   position: absolute;
   top: 0;
   left: 0;
@@ -902,12 +902,35 @@ select {
   position: -ms-sticky;
   position: -o-sticky;
   position: sticky;
-  top: 0;
+  top: 0;  
 }
 
 .doc-menu {
-  list-style: none;
+  list-style: none;  
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  top: 0px;  
+  height: 1024px;  
+  overflow: auto;    
 }
+
+.doc-menu::-webkit-scrollbar {
+    width: 6px;    
+    background-color:#f5f5f5;
+}
+
+/* ползунок скроллбара */
+.doc-menu::-webkit-scrollbar-thumb {
+    background-color: #e5e5e5;        
+}
+
+.doc-menu::-webkit-scrollbar-thumb:hover {
+    background-color: #e0e0e0;
+}
+
 
 .doc-menu .nav-link {
   margin-bottom: 0px;

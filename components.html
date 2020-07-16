@@ -209,19 +209,16 @@
                                         Первый слой - стекловидная пленка, которая и создает эффект Френеля. Второй слой, как правило, диффузный.
                                         Например дерево покрытое лаком, пластик, краска и т.д.</p>
 									
-                                        <div class="callout-block callout-info">
-                                            <div class="icon-holder">
-                                                <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> -->
-                                            </div><!--//icon-holder-->
+                                        <div class="callout-block callout-info"><div class="icon-holder"><i class="fas fa-info-circle"></i></div><!--//icon-holder-->
                                             <div class="content">
                                                 <h4 class="callout-title">Заметка:</h4>
                                                 <p>Интересно отметить, что используемые в современных рендерах формулы Френеля - это формулы для диэлектриков,
-                                        в частности стёкол. Для металлов, то есть проводников, существуют другие формулы точно описывающие их поведение.
-                                        Однако, так совпало, что при задании больших значений IOR в формуле френеля для диэлектриков, они начинают
-                                        вести себя похожим образом на формулы Френеля для проводников. Fresnel IOR = 50 или 20 далеко от физического
-                                        смысла, но дает похожий результат на формулы Френеля для проводников, то есть “случайно получается” металл.
-                                        В Hydra Renderer мы не стали нарушать эту старую добрую традицию, и поддержали ставший “де факто” трюк с 
-                                        большими значениями fresnel IOR используемый в других рендерах.</p>
+                                                в частности стёкол. Для металлов, то есть проводников, существуют другие формулы точно описывающие их поведение.
+                                                Однако, так совпало, что при задании больших значений IOR в формуле френеля для диэлектриков, они начинают
+                                                вести себя похожим образом на формулы Френеля для проводников. Fresnel IOR = 50 или 20 далеко от физического
+                                                смысла, но дает похожий результат на формулы Френеля для проводников, то есть “случайно получается” металл.
+                                                В Hydra Renderer мы не стали нарушать эту старую добрую традицию, и поддержали ставший “де факто” трюк с 
+                                                большими значениями fresnel IOR используемый в других рендерах.</p>
                                             </div><!--//content-->
                                         </div>
 																										
@@ -320,10 +317,7 @@
                                         
                                         <p>В настоящее время Hydra renderer поддерживает multiscattering только для GGX модели отражений. Он всегда включён и не нуждается в дополнительной настройке.</p>
                                         
-                                        <div class="callout-block callout-info">
-                                            <div class="icon-holder">
-                                                <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> -->
-                                            </div><!--//icon-holder-->
+                                        <div class="callout-block callout-info"><div class="icon-holder"><i class="fas fa-info-circle"></i></div><!--//icon-holder-->
                                             <div class="content">
                                                 <h4 class="callout-title">Заметка:</h4>
                                                 <p>Вы можете провести этот тест в любой системе визуализации. Расположите сферы с разным уровнем glossiness или roughness на сером фоне, сила отражений должна равняться единице и быть белого цвета, это 100% отражений. Если сферы темнеют, значит мультискаттеринг не поддерживается этой моделью. Если светлеют, значит модель вовсе нарушает закон сохранения энергии.</p>
@@ -343,10 +337,7 @@
                                         Другими словами - по мере роста силы цвета.</p>
                                         <p><strong>Luminance</strong> - вытесняет диффузию по мере роста относительной яркости цвета.</p>									
 
-                                        <div class="callout-block callout-info">
-                                            <div class="icon-holder">
-                                                <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> -->
-                                            </div><!--//icon-holder-->
+                                        <div class="callout-block callout-info"><div class="icon-holder"><i class="fas fa-info-circle"></i></div><!--//icon-holder-->
                                             <div class="content">
                                                 <h4 class="callout-title">Заметка:</h4>
                                                 <p>Относительная яркость цвета - это цвет представленный в чёрно-белом виде. Это не усреднение каналов,
@@ -427,10 +418,7 @@
                                         не видимых глазу, которые поглощают разные длины волн света, пропуская остальные, что и изменяет его цвет,
                                         но в целом оставляя при этом объём прозрачным.</p>
 
-                                        <div class="callout-block callout-info">
-                                            <div class="icon-holder">
-                                                <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> -->
-                                            </div><!--//icon-holder-->
+                                        <div class="callout-block callout-info"><div class="icon-holder"><i class="fas fa-info-circle"></i></div><!--//icon-holder-->
                                             <div class="content">
                                                 <h4 class="callout-title">Заметка:</h4>
                                                 <p>Поглощённый свет переводится в тепло. Именно поэтому, например, корпус чёрного автомобиля стоящего под солнцем, будет горячее корпуса белого автомобиля. Вообще любой не белый цвет, это результат поглощения одних длин волн света и отражения остальных. Отражённые любым способом волны, попадая в глаз человека и вызывают ощущение цвета. В компьютерной графике мы не заботимся о поглощённых волнах, а оперируем лишь отражёнными, т.е. теми, что мы видим.</p>
@@ -448,10 +436,7 @@
                                         для всех 3 объектов, а их цвет обусловлен только постепенным окрашиванием. Чтобы окрашивание темнело,
                                         нужно яркость цвета ставить меньше 100%. Для наглядности призмы посчитаны без отражений.</p>
 									
-                                        <div class="callout-block callout-info">
-                                            <div class="icon-holder">
-                                                <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> -->
-                                            </div><!--//icon-holder-->
+                                        <div class="callout-block callout-info"><div class="icon-holder"><i class="fas fa-info-circle"></i></div><!--//icon-holder-->
                                             <div class="content">
                                                 <h4 class="callout-title">Заметка:</h4>
                                                 <p>В предыдущих версиях этот параметр назывался Fog color. Но мы решили переименовать его в
@@ -559,10 +544,7 @@
                                             </table>
                                         </div><!--//table-responsive-->
 									
-                                        <div class="callout-block callout-info">
-                                            <div class="icon-holder">
-                                                <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> -->
-                                            </div><!--//icon-holder-->
+                                        <div class="callout-block callout-info"><div class="icon-holder"><i class="fas fa-info-circle"></i></div><!--//icon-holder-->
                                             <div class="content">
                                                 <h4 class="callout-title">Заметка:</h4>
                                                 <p>Может показаться странным, что показатель преломления льда ниже воды, а значит и его плотность тоже.
@@ -667,7 +649,13 @@
                                         <li><strong>Parallax</strong> - задает глубину продавливания поверхности внутрь для POM.</li>
                                     </ul>
                                         
-                                    <p>Параллакс временно недоступен.</p>
+                                    <div class="callout-block callout-warning"><div class="icon-holder"><i class="fas fa-tools"></i></div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">Ограничение:</h4>
+                                            <p>Параллакс временно недоступен.</p>
+                                        </div><!--//content-->
+                                    </div><!--//callout-block-->
+                                    
                                     </div><!--//Relief section-block-->
                                         
                                     </div><!--//HydraMtl section-block-->
@@ -745,7 +733,15 @@
                                 <div id="Textures" class="section-block">
                                     <h3 class="block-title">Текстуры</h3>
                                     <p>Hydra Renderer поддерживает все основные битмап и процедурные текстуры. В том числе работают специфические color correction и composite.</p>    
-                                    <p>На данный момент мапы HydraAO, HydraBlendedBox а также Falloff имеют внутреннее процедурное представление в движке, и их пока нельзя вкладывать друг в друга. </p>
+                                    
+                                    <div class="callout-block callout-warning">
+                                        <div class="icon-holder"><i class="fas fa-tools"></i></div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">Ограничение:</h4>
+                                            <p>На данный момент мапы HydraAO, HydraBlendedBox а также Falloff имеют внутреннее процедурное представление в движке, и их пока нельзя вкладывать друг в друга. </p>
+                                        </div><!--//content-->
+                                    </div><!--//callout-block-->
+                                    
 
                                     
                                     <!-- ////////////////////////////////////////////////////////////-->
@@ -807,7 +803,15 @@
                                             <li><strong>Only for this object</strong> (в разработке) - опция для отключения приёма окклюжена от других объектов. Нужен для эффектов не сильно зависящих от окружающих объектов. Например для ржавчины на металлическом объекте, или для анимации, чтобы при перемещении объекта он не принимал окклюзию, если это не нужно.</li>
                                         </ul>
                                         
-                                        <p>HydraAO пока не поддерживает использование текстур. Также как и falloff, вы можете использовать её в бленд материале.</p>
+                                        <p>Также как и falloff, вы можете использовать её в бленд материале.</p>
+                                        
+                                        <div class="callout-block callout-warning"><div class="icon-holder"><i class="fas fa-tools"></i></div><!--//icon-holder-->
+                                            <div class="content">
+                                                <h4 class="callout-title">Ограничение:</h4>
+                                                <p>HydraAO пока не поддерживает использование текстур.</p>
+                                            </div><!--//content-->
+                                        </div><!--//callout-block--> 
+                                        
                                     </div><!--//HydraAO section-block--> 
                                     
                                     
@@ -853,12 +857,15 @@
                                         </div><!--//row-->
                                         <p class="text-center">Кубическая развёртка и блендед бокс.</p>
                                         
-                                        <p>Особенности текущей реализации:</p>
-                                        <ul class="list">
-                                            <li>Текстура располагается в мировых координатах, поэтому она не совпадёт с простой кубической развёрткой, а также при движении объекта текстура останется на месте.</li>
-                                            <li>Временно не поддерживается для рельефа.</li>     
-                                        </ul>
-                                        
+                                        <div class="callout-block callout-warning"><div class="icon-holder"><i class="fas fa-tools"></i></div><!--//icon-holder-->
+                                            <div class="content">
+                                                <h4 class="callout-title">Ограничение:</h4>
+                                                <ul class="list">
+                                                    <li>Текстура располагается в мировых координатах, поэтому она не совпадёт с простой кубической развёрткой, а также при движении объекта текстура останется на месте.</li>
+                                                    <li>Временно не поддерживается для рельефа.</li>     
+                                                </ul>
+                                            </div><!--//content-->
+                                        </div><!--//callout-block-->      
                                     </div><!--//HydraBlendedBox section-block--> 
                                     
                                 </div><!--//Textures section-block-->
@@ -880,7 +887,7 @@
                                     <p>Источники света в 3д графике, это специальные объекты необходимые для освещения сцены. Как правило они в упрощённом виде имитируют работу реальных осветительных приборов. Но в большинстве случаев этого оказывается достаточно для убедительного и реалистичного представления.</p>                                
                                     <div class="callout-block callout-info">
                                         <div class="icon-holder">
-                                            <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> -->
+                                            <i class="fas fa-info-circle"></i> 
                                         </div><!--//icon-holder-->
                                         <div class="content">
                                             <h4 class="callout-title">Заметка:</h4>
@@ -907,7 +914,15 @@
                                     <!-- ////////////////////////////////////////////////////////////-->
                                     <div id="LightPhotometrics" class="section-block">
                                         <h4 class="block-title">Фотометрики</h4>                                                                                                                        
-                                        <p>Рендер поддерживает основные параметры фотометрических источников света всех типов: Point, Rectangle, Disk, Sphere и Cylinder. А также все световые распределения: диффузное, прожекторное и WEB (ies формата).</p>                                         
+                                        <p>Рендер поддерживает основные параметры фотометрических источников света всех типов: Point, Rectangle, Disk, Sphere и Cylinder. А также все световые распределения: диффузное, прожекторное и WEB (ies формата).</p>                                 
+                                        
+                                        <div class="callout-block callout-info"><div class="icon-holder"><i class="fas fa-info-circle"></i></div><!--//icon-holder-->
+                                            <div class="content">
+                                                <h4 class="callout-title">Заметка:</h4>
+                                                <p>Начиная с Hydra v2.5 яркость гидра источников вычисляется основываясь на стандартной физической формуле перевода кандел в экранную яркость. За экранную яркость берётся энергетическая яркость (лучистость - англ. Radiance), измеряемая в Вт/(ср*m<sup>2</sup>). В целях унифицирования разных источников сцета, фотометрики так же будут вычисляться по этому формуле. В связи с этим яркость фотометриков на рендере стала темнее, чем во вьюпорте. Видимо 3ds Max вычисляет по другой формуле.</p>
+                                            </div><!--//content-->
+                                        </div>
+                                        
                                     </div><!--//LightPhotometrics section-block--> 
                                     
                                     
@@ -919,12 +934,16 @@
                                         <h4 class="block-title">Hydra light</h4>                                                                                                                        
                                         <p>Собственный источник света. Поддерживает типы: Point, Rectangle, Disk, Sphere, Cylinder и Sky portal. Световое распределение: диффузное, прожекторное и WEB (IES формата).</p>  
                                         
-                                        <p>Sky portal рекомендуется для освещения интерьеров по классической схеме. В энвайронмент помещается хдр панорама, за окно ставится портал. Отключаем видимость галкой Visible in render, чтобы в альфе канале он не перекрыл фон, для возможности его замены в композинговой программе, например в Фотошопе.</p>
+                                        <div class="callout-block callout-success"><div class="icon-holder"><i class="fas fa-thumbs-up"></i></div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">Совет:</h4>
+                                            <p>Sky portal рекомендуется для освещения интерьеров по классической схеме. В энвайронмент помещается хдр панорама, за окно ставится портал. Отключаем видимость галкой Visible in render, чтобы в альфе канале он не перекрыл фон, для возможности его замены в композинговой программе, например в Фотошопе.</p>
+                                        </div><!--//content-->
+                                    </div>
                                         
-                                        <div class="callout-block callout-info">
-                                            <div class="icon-holder">
-                                                <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> -->
-                                            </div><!--//icon-holder-->
+                                        
+                                        
+                                        <div class="callout-block callout-info"><div class="icon-holder"><i class="fas fa-info-circle"></i></div><!--//icon-holder-->
                                             <div class="content">
                                                 <h4 class="callout-title">Заметка:</h4>
                                                 <p>В текущей реализации энвайронмент семплируется адаптивно, в отличии от портала. Из-за этого контрастные хдр текстуры в энвайронменте, например с солнцем, могут по качеству обгонять порталы, за то же время. Порталы рекомендуется использовать с неконтрастными хдр текстурами, например пасмурное небо, без яркого солнца.</p>
@@ -932,16 +951,12 @@
                                             </div><!--//content-->
                                         </div>
                                         
-                                        <div class="callout-block callout-warning">
-                                        <div class="icon-holder">
-                                            <i class="fas fa-bug"></i>
-                                        </div><!--//icon-holder-->
-                                        <div class="content">
-                                            <h4 class="callout-title">Ограничение:</h4>
-                                            <p>В текущей реализации Hydra light не светит во вьюпорте, но мы надеемся что нам удастся это починить. &#128578;</p>
-                                        </div><!--//content-->
-                                    </div><!--//callout-block-->
-                                        
+                                        <div class="callout-block callout-warning"><div class="icon-holder"><i class="fas fa-tools"></i></div><!--//icon-holder-->
+                                            <div class="content">
+                                                <h4 class="callout-title">Ограничение:</h4>
+                                                <p>В текущей реализации Hydra light не светит во вьюпорте, но мы надеемся что нам удастся это починить. &#128578;</p>
+                                            </div><!--//content-->
+                                        </div><!--//callout-block-->
                                     </div><!--//Hydralight section-block-->
                                     
                                     
@@ -971,19 +986,19 @@
                                         <div class="col-md-4 col-sm-4 col-xs-6">                                            
                                             <div class="screenshot-holder">
                                                 <a href="assets/images/Components/IBL_01.png" data-toggle="lightbox"><img class="img-fluid" src="assets/images/Components/IBL_01.png" alt="IBL_01"></a>
-                                                <a class="mask" href="assets/images/Components/IBL_01.png" data-toggle="lightbox"><svg class="svg-inline--fa fa-search-plus fa-w-16 icon" aria-hidden="true" focusable="false" data-prefix="fa" data-icon="search-plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M304 192v32c0 6.6-5.4 12-12 12h-56v56c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-56h-56c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h56v-56c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v56h56c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"></path></svg><!-- <i class="icon fa fa-search-plus"></i> --></a>
+                                                <a class="mask" href="assets/images/Components/IBL_01.png" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
                                             </div> 
                                         </div>
                                         <div class="col-md-4 col-sm-4 col-xs-6">                                            
                                             <div class="screenshot-holder">
                                                 <a href="assets/images/Components/IBL_02.png" data-toggle="lightbox"><img class="img-fluid" src="assets/images/Components/IBL_02.png" alt="IBL_02"></a>
-                                                <a class="mask" href="assets/images/Components/IBL_02.png" data-toggle="lightbox"><svg class="svg-inline--fa fa-search-plus fa-w-16 icon" aria-hidden="true" focusable="false" data-prefix="fa" data-icon="search-plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M304 192v32c0 6.6-5.4 12-12 12h-56v56c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-56h-56c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h56v-56c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v56h56c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"></path></svg><!-- <i class="icon fa fa-search-plus"></i> --></a>
+                                                <a class="mask" href="assets/images/Components/IBL_02.png" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
                                             </div> 
                                         </div>
                                         <div class="col-md-4 col-sm-4 col-xs-6">                                            
                                             <div class="screenshot-holder">
                                                 <a href="assets/images/Components/IBL_03.png" data-toggle="lightbox"><img class="img-fluid" src="assets/images/Components/IBL_03.png" alt="IBL_03"></a>
-                                                <a class="mask" href="assets/images/Components/IBL_03.png" data-toggle="lightbox"><svg class="svg-inline--fa fa-search-plus fa-w-16 icon" aria-hidden="true" focusable="false" data-prefix="fa" data-icon="search-plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M304 192v32c0 6.6-5.4 12-12 12h-56v56c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-56h-56c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h56v-56c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v56h56c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"></path></svg><!-- <i class="icon fa fa-search-plus"></i> --></a>
+                                                <a class="mask" href="assets/images/Components/IBL_03.png" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
                                             </div> 
                                         </div>
                                         </div>
@@ -1042,12 +1057,25 @@
                                     <div id="RenderingQuality" class="section-block">
                                         <h4 class="block-title">Rendering quality</h4>
                                                                                                                         
-                                        <p>Это настройка качества или правильнее будет сказать точности изображения. Чем выше настройки, тем точнее результат и как следствие меньше шума. В данный момент движок не поддерживает адаптивный сэмплинг, поэтому количество семплов одинаковое для всего изображения.</p>               
-                                        
+                                        <p>Это настройка качества или правильнее будет сказать точности изображения. Чем выше настройки, тем точнее результат и как следствие меньше шума. В данный момент движок не поддерживает адаптивный сэмплинг, поэтому количество семплов одинаковое для всего изображения.</p> 
+                                                                                
                                         <p class="text-center"><img class="img-fluid" src="assets/images/Components/RenderingQuality_GUI.png" alt="RenderingQuality_GUI"></p>                         
+                                        
+                                        <p>Позиции ползунка: "Draft", Low", "Medium", "High" и "Ultra" лишь условно соответствуют качеству, потому что для каждой сцены количество сэмплов для финального качества может быть разным. Как правило чем сложнее сцена, тем больше нужно сэмплов.</p>     
+                                                                                
                                         <ul class="list">
+                                            <li><strong>Inf.</strong> - бесконечное количество семплов/лучей.</li>
                                             <li><strong>Samples per pixel</strong> - количество семплов/лучей на 1 пиксель.</li>
                                             <li><strong>Limit render time (min)</strong> - ограничение времени рендера в минутах. Рендер может закончиться раньше указанного времени, если будет просчитано указанное количество семплов из предыдущего пункта.</li>           
+                                            <p></p>
+                                            <div class="callout-block callout-success"><div class="icon-holder"><i class="fas fa-thumbs-up"></i></div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">Совет:</h4>
+                                            <p>В большинстве случаев сложно определить, сколько нужно семплов для конкретной сцены. Поэтому можно поставить максимальное количество сэмплов и выключить рендер в ручную, когда качество будет достаточном. Так же, можно установить ограничение по времени, которое вы готовы потратить на рендер.</p>
+                                        </div><!--//content-->
+                                    </div>
+                                            
+                                            
                                             <li><strong>Ray bounce</strong> - количество переотражений или путей лучей. Подробнее:</li>         
                                         
                                             <div class="row">
@@ -1250,10 +1278,7 @@
                                             <li><strong>Chromatic aberration</strong> - моделирование аберраций оптической системы, выраженной в разном угле отклонения волн света разной длины.</li>
                                             <li><strong>Vignette</strong> - моделирование явления частичного ограничения (затемнения) наклонных пучков света оправой или диафрагмами оптической системы. Выражается в затемнении углов изображения.</li>
                                             <p></p>
-                                            <div class="callout-block callout-info">
-                                            <div class="icon-holder">
-                                                <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> -->
-                                            </div><!--//icon-holder-->
+                                            <div class="callout-block callout-info"><div class="icon-holder"><i class="fas fa-info-circle"></i></div><!--//icon-holder-->
                                             <div class="content">
                                                 <h4 class="callout-title">Заметка:</h4>
                                                 <p>В реальной фотографии с эффектами хроматической аберрацией (Chromatic aberration) и виньетирования (Vignette) как правило борются, т.к. они по праву считаются побочными эффектами несовершенной конструкции оптики и фотоэлементов. Но в мире стерильных синтетических изображений (рендерах) этот эффект придает некоторое сходство с реальной фотографией, что несколько компенсирует недостаток реалистичности, если таковой имеется на изображении. Также они могут использоваться как художественный приём.</p>
@@ -1387,7 +1412,8 @@
 
                     <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
                         <div id="doc-nav" class="doc-nav">                                                        
-                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">  
+                            <nav id="doc-menu" class="nav doc-menu">
+<!--                        <nav id="doc-menu" class="nav doc-menu flex-column">-->
 								<a class="nav-link scrollto" href="#AboutHydra">О Hydra renderer</a>
 								<a class="nav-link scrollto" href="#NewFutures">Новое в версии 2.5</a>                                
                                 <a class="nav-link scrollto" href="#HydraIn3dsMax">Hydra в Autodesk 3ds Max</a>
