@@ -674,6 +674,10 @@ select {
   border-bottom-color: inherit;
 }
 
+.table-check {
+  color: green;
+}
+
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: #f5f5f5;
 }
@@ -886,6 +890,7 @@ select {
 .body-red a:hover {
   color: #f4503b;
 }
+
 
 /* Sidebar */
 .doc-nav {    
