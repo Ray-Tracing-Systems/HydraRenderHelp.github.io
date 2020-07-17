@@ -671,7 +671,12 @@ select {
 }
 
 .table-bordered > thead > tr > th {
-  border-bottom-color: inherit;
+  border-bottom-color: inherit;  
+}
+
+.table-bordered td:nth-of-type(1),
+.table-bordered th:nth-of-type(1) {
+	width:50%;
 }
 
 .table-check {
