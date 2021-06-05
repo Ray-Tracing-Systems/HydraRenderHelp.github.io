@@ -65,7 +65,7 @@
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title"><span aria-hidden="true" class="icon icon_lifesaver"></span> ЧаВо</h1>
-                    <div class="meta"><i class="far fa-clock"></i> Последнее изменение: 20 июля 2020</div>
+                    <div class="meta"><i class="far fa-clock"></i> Последнее изменение: 06 июня 2021</div>
                 </div><!--//doc-header-->
                 <div class="doc-body row">
                     <div class="doc-content col-md-9 col-12 order-1">
@@ -182,7 +182,7 @@
 							<!-- ///////////////// Установка и запуск рендера ///////////////-->
 							<!-- ////////////////////////////////////////////////////////////-->
                             <section id="InstallAndStart" class="doc-section">                                
-                                <h2 class="section-title">Установка и запуск рендера</h2>
+                                <h2 class="section-title">Установка и запуск рендера, а так же известные ошибки</h2>
                                 
                                 <p>Наличие ошибок (багов) в программном обеспечении связано с его большой сложностью, и чем сложнее программа, тем больше вероятность возникновения в ней ошибок. Наши программы не исключение. О многих ошибках мы знаем и они стоят в очереди разработки. Но некоторые всё-таки "лечатся". Далее некоторые из них.</p>
                                 
@@ -221,10 +221,14 @@
                                     <div class="answer">Сбой в работе контроля изменений. Лечится перезагрузкой сцены.</div>
                                 </div><!--//section-block-->
                                 
+				 <div id="OldSceneBugSettings" class="section-block">
+                                    <h3 class="question"><i class="fas fa-question-circle"></i> В старой сцене странные настройки пост процесса</h3>
+                                    <div class="answer">При открытии старых сцен, в которых небыло новых настроек, они могут появиться не по умолчанию, и старые могут тоже частично сбиться.</div>
+                                </div><!--//section-block-->
                                 
                                 
                                 <div id="AbortRender" class="section-block">
-                                    <h3 class="question"><i class="fas fa-question-circle"></i> Рендер не реагирует на изменения настроек материалов</h3>
+                                    <h3 class="question"><i class="fas fa-question-circle"></i> Табличка "Abort render"</h3>
                                     <div class="answer">Пока не получается отследить в чём дело. Лечится перезагрузкой сцены.</div>
                                 </div><!--//section-block-->
                                 
@@ -288,11 +292,9 @@
                                 <div id="OtherProblems" class="section-block">
                                     <h3 class="question"><i class="fas fa-question-circle"></i> Другая проблема</h3>
                                     <div class="answer">Возможно поможет перезагрузка сцены или 3д макса.</div>
-                                </div><!--//section-block-->
+                                </div><!--//section-block-->                                                               
                                 
-                                
-                                
-								<div id="StillDoesntWork" class="section-block">
+				<div id="StillDoesntWork" class="section-block">
                                     <h3 class="question"><i class="fas fa-question-circle"></i> Все равно не работает</h3>
                                     <div class="answer">Мы будем очень благодарны, если вы вышлете эти логи нам на почту: info@raytracing.ru. Если нет возможности сделать даже вышеперечисленные действия, то в любом случае пишите нам на почту или <a href="https://vk.com/hydrarenderer">ВК</a>. Мы постараемся разобраться с проблемой в кратчайшие сроки.</div>
                                 </div><!--//section-block-->
@@ -306,35 +308,36 @@
                     <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
                         <div id="doc-nav" class="doc-nav">
                             <nav id="doc-menu" class="nav doc-menu flex-column sticky">
-								<a class="nav-link scrollto" href="#FAQ">Часто задаваемые вопросы</a>
-									<nav class="doc-sub-menu nav flex-column">
-										<a class="nav-link scrollto" href="#WhatThisHydra">Что такое Hydra Renderer?</a>
-										<a class="nav-link scrollto" href="#WhatVersions3dsMax">Какие версии 3ds Max поддерживаются?</a>
-										<a class="nav-link scrollto" href="#HowReinstall">Как установить или обновить плагин?</a>
-										<a class="nav-link scrollto" href="#WhatGIimplemented">Какие алгоритмы глобального освещения реализованы в рендере?</a>
-										<a class="nav-link scrollto" href="#MaterialsSupported">Поддерживаются ли материалы и источники света других рендеров?</a>
-										<a class="nav-link scrollto" href="#WhatMainFeatures">Какие фичи реализованы в рендере?</a>
-										<a class="nav-link scrollto" href="#WhatFeaturesExpected">Будет ли сделана такая-то фича или плагин для такого-то 3д редактора?</a>										
-										<a class="nav-link scrollto" href="#SoftShadowDirectLight">Как сделать мягкую тень от Direct Light?</a>
-										<a class="nav-link scrollto" href="#HowMakeCurtains">Как сделать шторы или тюль?</a>
-										<a class="nav-link scrollto" href="#HowMakeSkyPortal">Как сделать Sky Portal?</a>
-									</nav><!--//nav-->
+				<a class="nav-link scrollto" href="#FAQ">Часто задаваемые вопросы</a>
+				<nav class="doc-sub-menu nav flex-column">
+					<a class="nav-link scrollto" href="#WhatThisHydra">Что такое Hydra Renderer?</a>
+					<a class="nav-link scrollto" href="#WhatVersions3dsMax">Какие версии 3ds Max поддерживаются?</a>
+					<a class="nav-link scrollto" href="#HowReinstall">Как установить или обновить плагин?</a>
+					<a class="nav-link scrollto" href="#WhatGIimplemented">Какие алгоритмы глобального освещения реализованы в рендере?</a>
+					<a class="nav-link scrollto" href="#MaterialsSupported">Поддерживаются ли материалы и источники света других рендеров?</a>
+					<a class="nav-link scrollto" href="#WhatMainFeatures">Какие фичи реализованы в рендере?</a>
+					<a class="nav-link scrollto" href="#WhatFeaturesExpected">Будет ли сделана такая-то фича или плагин для такого-то 3д редактора?</a>										
+					<a class="nav-link scrollto" href="#SoftShadowDirectLight">Как сделать мягкую тень от Direct Light?</a>
+					<a class="nav-link scrollto" href="#HowMakeCurtains">Как сделать шторы или тюль?</a>
+					<a class="nav-link scrollto" href="#HowMakeSkyPortal">Как сделать Sky Portal?</a>
+				</nav><!--//nav-->
                                 <a class="nav-link scrollto" href="#InstallAndStart">Установка и запуск рендера</a>
-									<nav class="doc-sub-menu nav flex-column">
-										<a class="nav-link scrollto" href="#Reinstall">Я хочу обновить старую версию плагина на новую</a>			
-										<a class="nav-link scrollto" href="#ErrorCode126">“error code 126”</a>
+				<nav class="doc-sub-menu nav flex-column">
+					<a class="nav-link scrollto" href="#Reinstall">Я хочу обновить старую версию плагина на новую</a>			
+					<a class="nav-link scrollto" href="#ErrorCode126">“error code 126”</a>
                                         <a class="nav-link scrollto" href="#OldScene3dsMaxCrash">Старая сцена не открывается и 3д макс падает</a>
                                         <a class="nav-link scrollto" href="#OldSceneNotRender">Старая сцена не рендерится</a>
                                         <a class="nav-link scrollto" href="#NotChangeSettings">Рендер не реагирует на изменения настроек</a>
+					<a class="nav-link scrollto" href="#OldSceneBugSettings">В старой сцене странные настройки пост процесса</a>
                                         <a class="nav-link scrollto" href="#AbortRender">Табличка "Abort render"</a>
                                         <a class="nav-link scrollto" href="#ExportStop">Сцена экспортируется, но на каком-то этапе застревает и не доходит до рендера</a>
                                         <a class="nav-link scrollto" href="#BlueScreen">Синий экран смерти</a>
                                         <a class="nav-link scrollto" href="#VideocardNotVisible">Видео карта не видна в списке устройств в настройках рендера</a>
                                         <a class="nav-link scrollto" href="#DecimalNumbers">Дробные цифры в настройках не реагируют на ручной ввод</a>
-										<a class="nav-link scrollto" href="#PressRenderNothing">После запуска рендера проскакивает консоль и ничего не происходит</a>
+					<a class="nav-link scrollto" href="#PressRenderNothing">После запуска рендера проскакивает консоль и ничего не происходит</a>
                                         <a class="nav-link scrollto" href="#OtherProblems">Другая проблема</a>
-										<a class="nav-link scrollto" href="#StillDoesntWork">Все равно не работает</a>
-									</nav><!--//nav-->                                
+					<a class="nav-link scrollto" href="#StillDoesntWork">Все равно не работает</a>
+				</nav><!--//nav-->                                
                             </nav><!--//doc-menu-->
                         </div>
                     </div><!--//doc-sidebar-->
