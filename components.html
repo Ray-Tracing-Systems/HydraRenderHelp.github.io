@@ -64,7 +64,7 @@
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title"><span aria-hidden="true" class="icon icon_puzzle_alt"></span> Компоненты</h1>
-                    <div class="meta"><i class="far fa-clock"></i> Последнее изменение: 04 мая 2021</div>
+                    <div class="meta"><i class="far fa-clock"></i> Последнее изменение: 04 октября 2022</div>
                 </div><!--//doc-header-->
                 <div class="doc-body row" >
                     <div class="doc-content col-md-9 col-12 order-1">
@@ -84,22 +84,33 @@
 							
                             
                             
-							<section id="NewFutures" class="doc-section">
-								<h2 class="section-title">Новое в Hydra 2.5</h2>								                                  
-								<h6></h6>
-								<ul class="list">
-									<li>Плагин для 3ds max 2021.</li> 
-                                    <li>Анизотропные BRDF: Beckmann и TRGGX.</li>
-                                    <li>Multiscattering GGX (отражения и преломления).</li>
-                                    <li>Falloff.</li>
-                                    <li>Blended box (triplanar mapping).</li>
-                                    <li>Ambient occlusion (AO, dirt).</li>
-                                    <li>DOF для IBPT и MMLT (пока ещё есть небольшие артефакты).</li>
-                                    <li>Кламп для уменьшения шума.</li>
-                                    <li>Поддержка отключения фильтрации текстур (важно для текстур вращения анизотропии).</li>
-									<li>Исправления багов. Полный список в “c:\[Hydra]\Changes.txt”.</li>
-        						</ul>
-							</section><!--//NewFutures doc-section--> 
+              <section id="NewFutures" class="doc-section">
+                <h2 class="section-title">Новое в Hydra 2.6</h2>
+                <h6>Основные изменения</h6>
+                <ul class="list">
+                  <li>Плагин для 3ds max 2022.</li>
+                  <li>Нейросетевой денойзинг Intel® Open Image Denoise.</li>
+                  <li>Вибранс в пост процессе.</li>
+                </ul>
+                <h6>Улучшения</h6>
+                <ul class="list">
+                  <li>Contrast и Uniform contrast в более правильном цветовом пространстве.</li>
+                  <li>Uniform contrast действует более мягко, предотвращая образование полос.</li>
+                  <li>Мультисэмплинг для рендер элементов: color и normal пассы.</li>
+                  <li>Normal пасс учитывает бамп.</li>
+                </ul>
+                <h6>Исправления</h6>
+                <ul class="list">
+                  <li>Неправильная блокировка анизотропии.</li>
+                  <li>Неправильный цвет рендер элемента: normal пасс.</li>
+                  <li>Сплайны всегда отображаются.</li>
+                  <li>Иногда неправильное отображение нормалей.</li>
+                </ul>
+                <h6>Ограничения</h6>
+                <ul class="list">
+                  <li>Поддержка 3ds max 2017-2019 была прекращена.</li>                  
+                </ul>
+              </section><!--//NewFutures doc-section--> 
                             
                             
                             
@@ -248,7 +259,7 @@
                                         
                                     <!--/// Anisotropy ///-->									
 									<ul class="list">
-										<li><strong>Anisotropy </strong> <span class="badge badge-success">Новое в 2.5</span></li>
+										<li><strong>Anisotropy </strong></li>
 
 									   <p>Параметр определяет силу анизотропных, направленных отражений, подобных шлифованному металлу, когда структура шероховатостей имеет оформленное направление. В настоящее время доступно только для Beckmann и TRGGX моделей.</p> 
 									</ul>		
@@ -256,7 +267,7 @@
                                         
                                     <!--/// Rotation  ///-->									
 									<ul class="list">
-								        <li><strong>Rotation </strong><span class="badge badge-success">Новое в 2.5</span></li>
+								        <li><strong>Rotation </strong></li>
 
 								        <p>Параметр в градусах, определяющий направление анизотропных отражений.</p> 
                                             
@@ -281,9 +292,9 @@
                                         <ul>
                                             <li>Phong - простая универсальная модель.</li>
                                             <li>Torr-Sparr - микрофасетная модель Torrance-Sparrow.</li>
-                                            <li>Beckmann - анизотропная микрофасетная модель. <span class="badge badge-success">Новое в 2.5</span></li>
-                                            <li>GGX - самая распространённая микрофасетная модель, в настоящее время считающаяся стандартом индустрии. <span class="badge badge-success">Новое в 2.5</span></li>
-                                            <li>TRGGX - анизотропная микрофасетная модель. <span class="badge badge-success">Новое в 2.5</span></li>                                        
+                                            <li>Beckmann - анизотропная микрофасетная модель.</li>
+                                            <li>GGX - самая распространённая микрофасетная модель, в настоящее время считающаяся стандартом индустрии.</li>
+                                            <li>TRGGX - анизотропная микрофасетная модель.</li>                                        
                                         </ul>                                        
                                         
                                         <p>Микрофасетные моделирует моделируют более реалистичное поведение отражений. Все микрофасетные модели в исходном виде не учитывают переотражение между микрофасетками, поэтому с уменьшением glossiness (увеличением шероховатости) они теряют энергию и не проходят "тест печи", другими словами они темнеют больше чем нужно.</p>
@@ -397,7 +408,7 @@
                                         <p>Из-за того что при преломлении луч проходит через поверхность дважды, при тех же значениях glossiness
                                         преломления будут размываться намного сильнее отражений.<p>
                                         
-                                        <p>Начиная с версии 2.5 для преломлений используется multiscattering GGX. <span class="badge badge-success">Новое в 2.5</span></p>
+                                        <p>Начиная с версии 2.5 для преломлений используется multiscattering GGX.</p>
 									</ul>
 									
 									
@@ -745,7 +756,7 @@
                                     <!-- //////////////// Falloff //////////////-->
                                     <!-- ////////////////////////////////////////////////////////////-->
                                     <div id="Falloff" class="section-block">
-                                        <h4 class="block-title">Falloff <span class="badge badge-success">Новое в 2.5</span></h4>
+                                        <h4 class="block-title">Falloff</h4>
                                         
                                         <p>Hydra render возобновляет поддержку стандартного фаллоффа 3ds max, но в связи с новыми архитектурными решениями ядра, разработка фаллоффа только начата и пока работает только смена цвета. Falloff type временно используется всегда по Френелю с IOR равным 1.5.</p>     
                                         <p>Так же фаллофф можно использовать в качестве маски в стандартном бленд материале, для смешивания двух материалов, например для создания дополнительного покрытия лаком (coating). Для этого базовый материал остаётся как есть, а материал покрытия должен быть чистым зеркалом, с выключенным Френелем. В этом случае он “ляжет” поверх базового материала по Френелю, что будет физ.корректно.</p>
@@ -783,7 +794,7 @@
                                     <!-- //////////////// HydraAO //////////////-->
                                     <!-- ////////////////////////////////////////////////////////////-->
                                     <div id="HydraAO" class="section-block">
-                                        <h4 class="block-title">HydraAO <span class="badge badge-success">Новое в 2.5</span></h4>
+                                        <h4 class="block-title">HydraAO</h4>
                                         
                                         <p class="text-center"><img class="img-fluid" src="assets/images/Components/HydraAO.png" alt="HydraAO"></p> 
                                         
@@ -831,7 +842,7 @@
                                     <!-- //////////////// HydraBlendedBox //////////////-->
                                     <!-- ////////////////////////////////////////////////////////////-->
                                     <div id="HydraBlendedBox" class="section-block">
-                                        <h4 class="block-title">HydraBlendedBox <span class="badge badge-success">Новое в 2.5</span></h4>
+                                        <h4 class="block-title">HydraBlendedBox</h4>
                                         
                                         <p class="text-center"><img class="img-fluid" src="assets/images/Components/HydraBlendedBox_GUI.png" alt="HydraBlendedBox_GUI"></p>
                                         
@@ -1194,7 +1205,7 @@
                                             <p>Методы QMC это путь в сторону де рандомизации. Они имеют более равномерное распределение в пространстве, чем обычные случайные числа (рандомные числа), ускоряя просчёт. Но из-за этого местами может проявляться некоторая периодичность в виде лесенок, шашечек и других визуально нежелательных структур. Их появление предсказать очень сложно, т.к. оно зависит от большого числа переменных: ракурс, источники света, материалы и их взаимное расположение в пространстве и так далее. Как правило, если во время просчёта эти структуры слишком медленно пропадают, то скорее всего они не исчезнут за приемлемое время и эту настройку лучше отключить для этого кадра. Также, если вы рендерите очень долго, а шум в некоторых местах всё равно остался, попробуйте отключить эти опции.</p>
                                             
                                             <li><strong>Env. clamp</strong> - максимальное значение яркости энвайронмента. Временно недоступно.</li>
-                                            <li><strong>BSDF clamp </strong><span class="badge badge-success">Новое в 2.5</span> - максимальное значение яркости отражённых лучей от материалов. Параметр был временно недоступен и возвращен в несколько переработанном виде.</li>
+                                            <li><strong>BSDF clamp </strong> - максимальное значение яркости отражённых лучей от материалов. Параметр был временно недоступен и возвращен в несколько переработанном виде.</li>
                                             
                                             <p>Оба вида клампа используются для борьбы с ярким точечным шумом. Чем меньше значение, тем меньше шума.</p>
                                         </ul>          
@@ -1272,8 +1283,34 @@
                                     <!-- //////////////// Denoising //////////////-->
                                     <!-- ////////////////////////////////////////////////////////////-->
                                     <div id="Denoising" class="section-block">
-                                        <h4 class="block-title">Denoising</h4>                    
-                                        <p>Начиная с преальфы 2.5.2 используется нейросетевой денойз Intel® Open Image Denoise.</p>          
+                                      <h4 class="block-title">Denoising <span class="badge badge-success">Новое в 2.6</span></h4>
+
+                                      <p>Нейросетевой денойз Intel® Open Image Denoise позволяет качественно удалять шум и точечные всплески яркости.</p>
+
+                                      <p class="text-center"><img class="img-fluid" src="assets/images/Components/PP_Denoise_GUI.png" alt="PP_Denoise_GUI"></p>
+
+                                      <ul class="list">
+                                        <li><strong>On</strong> - включает денойзинг. Можно включать до или после рендеринга.</li>
+                                        <li><strong>Color</strong> - включает color пасс для улучшения качества диффузных текстур.</li>
+                                        <li><strong>Normals</strong> - включает normal пасс для улучшения качества поверхностей.</li>
+
+                                        <p><strong>Оба пасса необходимо включать до начала визуализации.</strong></p>
+                                        
+                                        <div class="callout-block callout-warning">
+                                          <div class="icon-holder"><i class="fas fa-tools"></i></div><!--//icon-holder-->
+                                          <div class="content">
+                                            <h4 class="callout-title">Ограничение:</h4>
+                                            <p>
+                                              При использовании глубины резкости камеры (DOF) рекомендуется отключать эти пассы, т.к. они не размываются по глубине, и остаются всегда чёткими.
+                                              В результате денойз неправильно обрабатывает размытые области.
+                                            </p>
+                                          </div><!--//content-->
+                                        </div><!--//callout-block-->
+
+                                        <li><strong>Apply</strong> - Величина фильтрации.</li>
+
+                                      </ul>
+
                                     </div><!--//Denoising section-block-->
                                     
                                     
@@ -1287,19 +1324,20 @@
                                         <p class="text-center"><img class="img-fluid" src="assets/images/Components/PP_Common_GUI.png" alt="PP_Common_GUI"></p>     
                                         
                                         <ul class="list">
-                                            <li><strong>Exposure</strong> - яркость изображения, экспозиция.</li>
-                                            <li><strong>Compress</strong> - сжатие высокого динамического диапазона (hdr) в низкий динамический диапазон (ldr), для полного охвата цветов монитором. Моделируются некоторые свойства человеческого зрения.</li>
-                                            <li><strong>Contrast</strong> - увеличение разницы между яркими и тёмными тонами изображения.</li>
-                                            <li><strong>Saturation</strong> - изменение насыщенности цвета.</li>
-                                            <li><strong>White balance</strong> - автоматическая коррекция тональности изображения. Моделируются биологические механизмы цветопостоянства, по стандарту CIECAM02. Имеется возможность ручного выбора точки белого во фреймбуфере. Чёрный цвет включает автоматическое определение точки белого, что не всегда корректно работает.</li>
-                                            <li><strong>Uniform contrast</strong> - нелинейное перераспределение яркости, для достижения равномерного контраста изображения. В изображениях с сильными разрывами в яркости, может приводить к заметным искажениям.</li>                     
-                                            
-                                            <p class="text-center"><img class="img-fluid" src="assets/images/Components/UniformContrast.png" alt="UniformContrast"></p>
-                                            <p class="text-center">Слева оригинал, справа с фильтром uniform contrast</p>
-                                            
-                                            <li><strong>Normalize</strong> - линейное растягивание диапазона яркостей с отсечкой точечных выбросов, для увеличения контраста изображения. В большинстве случаев рекомендуется ставить на максимум, чтобы заполнить весь LDR диапазон.</li>
-                                            <p>Не рекомендуется для анимации или если нужно точно сравнить несколько кадров. Из-за адаптивной природы алгоритма кадры могут иметь немного разную яркость.</p>
-                                            <li><strong>Sharpness</strong> - увеличение резкости изображения.</li>
+                                          <li><strong>Exposure</strong> - яркость изображения, экспозиция.</li>
+                                          <li><strong>Compress</strong> - сжатие высокого динамического диапазона (hdr) в низкий динамический диапазон (ldr), для полного охвата цветов монитором. Моделируются некоторые свойства человеческого зрения.</li>
+                                          <li><strong>Contrast</strong> - увеличение разницы между яркими и тёмными тонами изображения.</li>
+                                          <li><strong>Saturation</strong> - изменение насыщенности цвета.</li>
+                                          <li><strong>Vibrance</strong> - изменение насыщенности цвета только со слабой насыщенностью. Позволяет избежать перенасыщения и искажения уже насыщенных цветов. <span class="badge badge-success">Новое в 2.6</span></li>
+                                          <li><strong>White balance</strong> - автоматическая коррекция тональности изображения. Моделируются биологические механизмы цветопостоянства, по стандарту CIECAM02. Имеется возможность ручного выбора точки белого во фреймбуфере. Чёрный цвет включает автоматическое определение точки белого, что не всегда корректно работает.</li>
+                                          <li><strong>Uniform contrast</strong> - нелинейное перераспределение яркости, для достижения равномерного контраста изображения. В изображениях с сильными разрывами в яркости, может приводить к заметным искажениям.</li>
+
+                                          <p class="text-center"><img class="img-fluid" src="assets/images/Components/UniformContrast.png" alt="UniformContrast"></p>
+                                          <p class="text-center">Слева оригинал, справа с фильтром uniform contrast</p>
+
+                                          <li><strong>Normalize</strong> - линейное растягивание диапазона яркостей с отсечкой точечных выбросов, для увеличения контраста изображения. В большинстве случаев рекомендуется ставить на максимум, чтобы заполнить весь LDR диапазон.</li>
+                                          <p>Не рекомендуется для анимации или если нужно точно сравнить несколько кадров. Из-за адаптивной природы алгоритма кадры могут иметь немного разную яркость.</p>
+                                          <li><strong>Sharpness</strong> - увеличение резкости изображения.</li>
                                         </ul>                                        
                                     </div><!--//CommonCorrections section-block-->
                                     
@@ -1406,7 +1444,7 @@
                             <nav id="doc-menu" class="nav doc-menu">
 <!--                        <nav id="doc-menu" class="nav doc-menu flex-column">-->
 								<a class="nav-link scrollto" href="#AboutHydra">О Hydra renderer</a>
-								<a class="nav-link scrollto" href="#NewFutures">Новое в версии 2.5</a>                                
+								<a class="nav-link scrollto" href="#NewFutures">Новое в версии 2.6</a>                                
                                 <a class="nav-link scrollto" href="#HydraIn3dsMax">Hydra в Autodesk 3ds Max</a>
                                     <nav class="doc-sub-menu nav flex-column">
                                         <a class="nav-link scrollto" href="#Materials">Материалы</a>
@@ -1429,10 +1467,10 @@
                                             </nav>
                                         <a class="nav-link scrollto" href="#Textures">Текстуры</a>
                                             <nav class="doc-sub2-menu nav flex-column">
-                                                <a class="nav-link scrollto" href="#Falloff">Falloff <span class="badge badge-success">Новое в 2.5</span></a>
-                                                <a class="nav-link scrollto" href="#HydraAO">HydraAO <span class="badge badge-success">Новое в 2.5</span></a>
+                                                <a class="nav-link scrollto" href="#Falloff">Falloff</a>
+                                                <a class="nav-link scrollto" href="#HydraAO">HydraAO</a>
                                                 <a class="nav-link scrollto" href="#HydraBackEnvir">HydraBack/Envir</a>
-                                                <a class="nav-link scrollto" href="#HydraBlendedBox">HydraBlendedBox <span class="badge badge-success">Новое в 2.5</span></a>
+                                                <a class="nav-link scrollto" href="#HydraBlendedBox">HydraBlendedBox</a>
                                             </nav>
                                         <a class="nav-link scrollto" href="#Lights">Источники света</a>
                                             <nav class="doc-sub2-menu nav flex-column">
@@ -1456,8 +1494,8 @@
                                         
                                         <a class="nav-link scrollto" href="#PostProc">Post processing</a>
                                             <nav class="doc-sub2-menu nav flex-column">
-                                                <a class="nav-link scrollto" href="#Denoising">Denoising</a>
-                                                <a class="nav-link scrollto" href="#CommonCorrections">Common corrections</a>
+                                                <a class="nav-link scrollto" href="#Denoising">Denoising <span class="badge badge-success">Новое в 2.6</span></a>
+                                                <a class="nav-link scrollto" href="#CommonCorrections">Common corrections <span class="badge badge-success">Новое в 2.6</span></a>
                                                 <a class="nav-link scrollto" href="#OpticsEffects">Optics effects</a>                                                
                                             </nav>
                                         
@@ -1480,7 +1518,7 @@
     <footer id="footer" class="footer text-center">
         <div class="container">
             <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
-            <small class="copyright">© 2021 Ray Tracing Systems. All rights reserved. <!--<i class="fas fa-heart"></i> <a href="http://www.raytracing.ru/" target="_blank">Hydra renderer</a>--></small>
+            <small class="copyright">© 2022 Ray Tracing Systems. All rights reserved. <!--<i class="fas fa-heart"></i> <a href="http://www.raytracing.ru/" target="_blank">Hydra renderer</a>--></small>
         </div><!--//container-->
     </footer><!--//footer-->
     
